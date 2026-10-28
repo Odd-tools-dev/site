@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odd Tools, des outils pour Revit</title>
+<meta name="description" content="Odd Tools ajoute un onglet à Revit : plans de ventes, gestion massive des familles, audit des maquettes et calcul de surfaces projetées.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("oddtools-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#" aria-label="Odd Tools"><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="mark-ring" cx="20" cy="28" r="13" fill="none" stroke-width="7"/><rect class="mark-sq" x="33" y="3" width="12" height="12" rx="3"/></svg><span><b>Odd</b> Tools</span></a>
+    <nav aria-label="Navigation">
+      <a class="hide-s" href="#outils">Outils</a>
+      <a class="hide-s" href="#installation">Installation</a>
+      <a href="assets/Odd-Tools-plaquette.pdf">Brochure PDF</a>
+      <button class="mode" id="mode" type="button" aria-pressed="false"><i aria-hidden="true"></i><span id="mode-label">Thème sombre</span></button>
+    </nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <h1>Des outils Revit simples, rapides et sur mesure.</h1>
+    <p class="lead">Odd Tools ajoute un onglet à Revit pour les tâches répétitives des projets BIM : plans de ventes, familles en masse, audit des maquettes, surfaces de terrain.</p>
+    <div class="cta">
+      <a class="btn primary" href="#outils">Voir les outils</a>
+      <a class="btn line" href="assets/Odd-Tools-plaquette.pdf">Télécharger la brochure</a>
+    </div>
+
+    <div class="ribbon-scroll">
+      <div class="ribbon" role="navigation" aria-label="Onglet Odd Tools dans Revit">
+        <div class="tabs"><span>Architecture</span><span>Structure</span><span>Insérer</span><span class="on">Odd Tools</span><span>Gérer</span></div>
+        <div class="bar">
+          <div class="group"><div class="keys"><a class="key" href="#general"><img class="l" src="assets/icons/light/about.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/about.svg" alt="" width="64" height="64"><span>À propos<br>&nbsp;</span></a><a class="key" href="#general"><img class="l" src="assets/icons/light/options.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/options.svg" alt="" width="64" height="64"><span>Options<br>&nbsp;</span></a></div><div class="gname">Général</div></div>
+          <div class="group"><div class="keys"><a class="key" href="#familles"><img class="l" src="assets/icons/light/export.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/export.svg" alt="" width="64" height="64"><span>Export<br>Massif</span></a><a class="key" href="#familles"><img class="l" src="assets/icons/light/import.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/import.svg" alt="" width="64" height="64"><span>Import<br>Massif</span></a></div><div class="gname">Gestion des familles</div></div>
+          <div class="group"><div class="keys"><a class="key" href="#audit"><img class="l" src="assets/icons/light/audit.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/audit.svg" alt="" width="64" height="64"><span>Audit<br>/ fichier</span></a><a class="key" href="#audit"><img class="l" src="assets/icons/light/auditglobal.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/auditglobal.svg" alt="" width="64" height="64"><span>Analyse<br>/ globale</span></a></div><div class="gname">Audits des fichiers</div></div>
+          <div class="group"><div class="keys"><a class="key" href="#topo"><img class="l" src="assets/icons/light/projectedarea.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/projectedarea.svg" alt="" width="64" height="64"><span>Surface Topo<br>Projetée</span></a></div><div class="gname">Toposolid</div></div>
+          <div class="group"><div class="keys"><a class="key" href="#plans"><img class="l" src="assets/icons/light/plans.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/plans.svg" alt="" width="64" height="64"><span>Générer<br>les plans</span></a></div><div class="gname">Plans de ventes</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="hint">Voici l'onglet tel qu'il apparaît dans Revit. Il suit le thème clair ou sombre de Revit, y compris quand on le change en cours de session. Essayez avec le bouton en haut de la page.</p>
+  </div>
+
+  <section id="outils" style="padding-top:0">
+    <h2>Les outils</h2>
+
+    <article class="tool first" id="plans">
+      <div class="pics"><span><img class="l" src="assets/icons/light/plans.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/plans.svg" alt="" width="64" height="64"></span></div>
+      <div>
+        <h3>Plans de ventes</h3>
+        <div class="where">Panneau Plans de ventes</div>
+        <p>Pour chaque logement du projet, Odd Tools crée une vue de plan, une nomenclature et une feuille. La vue est cadrée au plus près du logement et orientée selon la porte d'entrée.</p>
+      </div>
+      <ul>
+        <li>Cadrage qui suit la forme du logement</li>
+        <li>Nomenclatures et feuilles créées et placées</li>
+        <li>Configurations nommées, enregistrables et réutilisables</li>
+      </ul>
+    </article>
+
+    <article class="tool" id="familles">
+      <div class="pics"><span><img class="l" src="assets/icons/light/export.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/export.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/import.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/import.svg" alt="" width="64" height="64"></span></div>
+      <div>
+        <h3>Gestion des familles</h3>
+        <div class="where">Export massif et Import massif</div>
+        <p>Exportez toutes les familles chargeables d'un projet dans un dossier, ou chargez-en des dizaines d'un coup depuis un dossier.</p>
+      </div>
+      <ul>
+        <li>Un sous-dossier par catégorie, au choix</li>
+        <li>Version de Revit ajoutée au nom de fichier</li>
+        <li>Famille déjà présente : ignorer ou remplacer, en gardant ou non les valeurs de paramètres</li>
+        <li>Doublons repérés à l'import</li>
+      </ul>
+    </article>
+
+    <article class="tool" id="audit">
+      <div class="pics"><span><img class="l" src="assets/icons/light/audit.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/audit.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/auditglobal.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/auditglobal.svg" alt="" width="64" height="64"></span></div>
+      <div>
+        <h3>Audit des fichiers</h3>
+        <div class="where">Audit par fichier et Analyse globale</div>
+        <p>Un audit en lecture seule des projets ouverts : un onglet par section et un export Excel automatique. L'analyse globale assemble plusieurs audits dans un tableau comparatif.</p>
+        <details><summary>Les 15 sections de l'audit</summary><ul class="chips"><li>Fichier</li><li>Imports CAD et liens</li><li>Familles chargeables</li><li>Familles système</li><li>Groupes</li><li>Vues et feuilles</li><li>Gabarits de vue</li><li>Détails 2D et matériaux</li><li>Niveaux et contraintes</li><li>Position du projet</li><li>Pièces</li><li>Phases</li><li>Variantes (options de conception)</li><li>Paramètres du projet</li><li>Nomenclatures</li></ul></details>
+      </div>
+      <ul>
+        <li>15 sections d'analyse</li>
+        <li>Indicateurs de couleur : conforme, à surveiller, à corriger</li>
+        <li>Plusieurs projets comparés d'un coup d'œil</li>
+      </ul>
+    </article>
+
+    <article class="tool" id="topo">
+      <div class="pics"><span><img class="l" src="assets/icons/light/projectedarea.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/projectedarea.svg" alt="" width="64" height="64"></span></div>
+      <div>
+        <h3>Surface Topo Projetée</h3>
+        <div class="where">Panneau Toposolid</div>
+        <p>Calcule la surface projetée au sol des Toposolids et de leurs sous-divisions, puis l'écrit dans un paramètre d'instance, prêt pour vos nomenclatures.</p>
+      </div>
+      <ul>
+        <li>Toposolids et sous-divisions</li>
+        <li>Résultat dans un paramètre d'instance</li>
+      </ul>
+    </article>
+
+    <article class="tool" id="general">
+      <div class="pics"><span><img class="l" src="assets/icons/light/about.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/about.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/options.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/options.svg" alt="" width="64" height="64"></span></div>
+      <div>
+        <h3>Options et affichage</h3>
+        <div class="where">Panneau Général</div>
+        <p>Choisissez les panneaux qui s'affichent dans le ruban. L'interface existe en français et en anglais et suit le thème de Revit.</p>
+      </div>
+      <ul>
+        <li>Panneaux affichés au choix</li>
+        <li>Thème clair ou sombre, sans redémarrer Revit</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="installation" style="padding-top:1rem">
+    <h2>Installation à la carte</h2>
+    <div class="cols">
+      <div class="col"><h3>Un installateur par panneau</h3><p>Familles, Audit, Topographie ou Plans de ventes : n'installez que ce dont vous avez besoin.</p></div>
+      <div class="col"><h3>Ou le pack complet</h3><p>Tous les panneaux en une seule installation. Les installateurs se cumulent, dans l'ordre que vous voulez.</p></div>
+      <div class="col"><h3>Sans droits administrateur</h3><p>L'installation se fait pour l'utilisateur. La désinstallation est propre depuis Windows et vos réglages sont conservés.</p></div>
+    </div>
+    <div class="versions">
+      <h3>Compatible avec</h3>
+      <ul><li>Revit 2025</li><li>Revit 2026</li><li>Revit 2027</li></ul>
+    </div>
+  </section>
+  </main>
+
+  <div class="get" style="margin-inline:calc(50% - 50vw)">
+    <div class="wrap inner" style="padding-block:clamp(2.5rem,6vw,4rem)">
+      <div>
+        <h2>Téléchargement</h2>
+        <p>Odd Tools est en version bêta 0.11. Les installateurs ne sont pas encore publics ; en attendant, la brochure présente les outils en détail.</p>
+      </div>
+      <div class="badge">Bientôt disponible</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Odd Tools"><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="mark-ring" cx="20" cy="28" r="13" fill="none" stroke-width="7"/><rect class="mark-sq" x="33" y="3" width="12" height="12" rx="3"/></svg><span><b>Odd</b> Tools</span></a>
+    <span>Version 0.11 Beta</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById("mode"), label = document.getElementById("mode-label");
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function current() { return root.dataset.theme || (mq.matches ? "dark" : "light"); }
+  function render() {
+    var dark = current() === "dark";
+    btn.setAttribute("aria-pressed", String(dark));
+    label.textContent = dark ? "Thème clair" : "Thème sombre";
+  }
+  btn.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("oddtools-theme", next); } catch (e) {}
+    render();
+  });
+  mq.addEventListener && mq.addEventListener("change", render);
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+:root {
+  --bg: #F5F5F5; --panel: #FFFFFF; --ink: #1F1F1F; --muted: #5C5C60; --line: #CFCFCF; --soft: #E6E6E8;
+  --accent: #C21E73; --on-accent: #FFFFFF; --teal: #0F9E8E; --tab: #EDEDED;
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --wrap: 1120px;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #252526; --panel: #2D2D30; --ink: #E8E8EA; --muted: #A9A9B0; --line: #3F3F43; --soft: #333336;
+  --accent: #E64A98; --on-accent: #2B0A1B; --teal: #14B8A6; --tab: #1E1E1F;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #252526; --panel: #2D2D30; --ink: #E8E8EA; --muted: #A9A9B0; --line: #3F3F43; --soft: #333336;
+    --accent: #E64A98; --on-accent: #2B0A1B; --teal: #14B8A6; --tab: #1E1E1F;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+img { display: block; }
+.wrap { width: min(var(--wrap), 100% - 2.5rem); margin-inline: auto; }
+
+/* icones : deux variantes, une seule visible selon le theme */
+.d { display: none; }
+:root[data-theme="dark"] .l { display: none; }
+:root[data-theme="dark"] .d { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .l { display: none; }
+  :root:not([data-theme="light"]) .d { display: block; }
+}
+
+/* en-tete */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.5rem; }
+.brand { white-space: nowrap; display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; font: 300 1.45rem/1 var(--display); letter-spacing: -.01em; }
+.brand b { font-weight: 800; }
+.brand svg { width: 34px; height: 34px; }
+.mark-ring { stroke: var(--accent); } .mark-sq { fill: var(--teal); }
+.top nav { display: flex; align-items: center; gap: 1.5rem; font-size: .95rem; }
+.top nav a { text-decoration: none; color: var(--muted); }
+.top nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.mode { font: inherit; font-size: .9rem; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: .4rem .9rem .4rem .6rem; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; }
+.mode:hover { border-color: var(--accent); }
+.mode i { width: 1.05rem; height: 1.05rem; border-radius: 50%; border: 2px solid var(--ink); background: linear-gradient(90deg, var(--ink) 50%, transparent 50%); display: block; }
+
+/* hero */
+.hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(2.5rem, 6vw, 4.5rem); }
+h1 { font: 300 clamp(2.4rem, 6.2vw, 4.6rem)/1.05 var(--display); letter-spacing: -.025em; max-width: 14ch; }
+.lead { margin-top: 1.6rem; max-width: 52ch; font-size: 1.2rem; color: var(--muted); }
+.cta { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem; }
+.btn { display: inline-block; font-weight: 600; text-decoration: none; padding: .75rem 1.25rem; border-radius: 6px; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(.92); }
+.btn.line { color: var(--accent); background: transparent; }
+.btn.line:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+
+/* ruban : le theme de la page = le theme de Revit */
+.ribbon-scroll { overflow-x: auto; margin-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: .5rem; }
+.ribbon { min-width: 760px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); overflow: hidden; }
+.tabs { display: flex; gap: 1.6rem; padding: .55rem 1.2rem 0; background: var(--tab); border-bottom: 1px solid var(--line); font-size: .85rem; color: var(--muted); }
+.tabs span { padding: .45rem .9rem; }
+.tabs .on { background: var(--bg); color: var(--accent); font-weight: 700; border: 1px solid var(--line); border-bottom-color: var(--bg); margin-bottom: -1px; border-radius: 4px 4px 0 0; }
+.bar { display: flex; padding: 1rem .6rem 0; }
+.group { display: flex; flex-direction: column; justify-content: space-between; padding: 0 1.1rem; border-right: 1px solid var(--line); }
+.group:last-child { border-right: 0; }
+.keys { display: flex; gap: .4rem; }
+.key { width: 5.6rem; padding: .5rem .2rem .6rem; text-align: center; text-decoration: none; font-size: .82rem; line-height: 1.25; border-radius: 6px; border: 1px solid transparent; }
+.key:hover { background: var(--panel); border-color: var(--line); }
+.key img { width: 40px; height: 40px; margin: 0 auto .5rem; }
+.key span { display: block; min-height: 2.05em; }
+.gname { text-align: center; color: var(--muted); font-size: .76rem; padding: .5rem 0 .7rem; white-space: nowrap; }
+.hint { margin-top: .8rem; font-size: .9rem; color: var(--muted); }
+
+/* outils */
+section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+h2 { font: 300 clamp(1.8rem, 3.6vw, 2.6rem)/1.15 var(--display); letter-spacing: -.02em; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.tool { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) minmax(0, 20rem); gap: 1.5rem 2.5rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
+.tool:last-of-type { border-bottom: 1px solid var(--line); }
+.pics { display: flex; gap: .6rem; align-items: flex-start; }
+.pics img { width: 56px; height: 56px; }
+.tool h3 { font: 600 1.5rem/1.2 var(--display); letter-spacing: -.01em; }
+.tool.first h3 { font-size: 2rem; font-weight: 300; }
+.where { margin-top: .35rem; font-size: .92rem; color: var(--teal); font-weight: 600; }
+.tool p { margin-top: .9rem; max-width: 58ch; }
+.tool ul { list-style: none; border-left: 3px solid var(--accent); padding-left: 1.1rem; display: grid; gap: .6rem; font-size: .98rem; align-self: start; }
+details { margin-top: 1.1rem; }
+summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .95rem; width: fit-content; }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .9rem; }
+.chips li { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: .15rem .8rem; font-size: .85rem; }
+
+/* installation */
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.col { border-left: 3px solid var(--accent); padding-left: 1.2rem; }
+.col h3 { font: 600 1.15rem/1.3 var(--display); margin-bottom: .45rem; }
+.col p { color: var(--muted); font-size: 1rem; }
+.versions { margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: baseline; }
+.versions h3 { font: 600 1.15rem/1.3 var(--display); }
+.versions ul { list-style: none; display: flex; gap: .6rem; flex-wrap: wrap; }
+.versions li { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: .35rem .9rem; font-weight: 600; }
+
+/* telechargement */
+.get { background: var(--panel); border-block: 1px solid var(--line); }
+.get .inner { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+.get h2 { margin-bottom: .6rem; }
+.get p { color: var(--muted); max-width: 56ch; }
+.badge { display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; }
+.badge::before { content: ""; width: .85rem; height: .85rem; border-radius: 3px; background: var(--teal); }
+
+footer { padding-block: 2.5rem 3.5rem; color: var(--muted); font-size: .92rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; align-items: center; }
+footer .brand { font-size: 1.1rem; color: var(--ink); }
+footer .brand svg { width: 24px; height: 24px; }
+
+@media (max-width: 860px) {
+  .tool { grid-template-columns: 1fr; gap: 1.2rem; }
+  .cols { grid-template-columns: 1fr; gap: 1.6rem; }
+  .get .inner { grid-template-columns: 1fr; }
+  .top nav .hide-s { display: none; }
+  .top nav { gap: .9rem; }
+  .top nav a[href$=".pdf"] { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
