@@ -20,6 +20,7 @@ export default defineConfig({
       customCss: ['./src/styles/odd.css'],
       components: { Footer: './src/components/Footer.astro' },
       sidebar: [
+        { slug: 'index', label: 'Accueil', translations: { en: 'Home' } },
         { label: 'Démarrer', translations: { en: 'Getting started' }, items: [
           { slug: 'demarrer/installation' },
           { slug: 'demarrer/ruban' },

@@ -1,24 +1,24 @@
 ---
-title: Odd Tools — Docs
+title: Welcome
 description: Install and use the Odd Tools plugin for Revit.
-template: splash
-hero:
-  tagline: Simple, fast, made-to-measure Revit tools. Installation, then a guide for each tool.
-  actions:
-    - text: Install
-      link: ./demarrer/installation/
-      icon: right-arrow
-      variant: primary
-    - text: The tab in Revit
-      link: ./demarrer/ruban/
-      variant: minimal
+sidebar:
+  order: 0
 ---
 
-import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import { Steps, Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
+**Odd Tools** adds a tab to Revit with simple, fast, made-to-measure tools for the repetitive tasks of BIM projects. This documentation explains how to install it and how to use each tool.
+
 <Ribbon />
+
+## Getting started
+
+<CardGrid>
+  <LinkCard title="Installation" description="Install Odd Tools and choose the Revit versions." href="./demarrer/installation/" />
+  <LinkCard title="The Odd Tools tab" description="The panels and buttons in the ribbon." href="./demarrer/ruban/" />
+</CardGrid>
 
 ## The tools
 
@@ -30,6 +30,6 @@ import Ribbon from '~/components/Ribbon.astro';
   <figure><Icon name="plans" size="big" /><br/>Sales plans</figure>
 </div>
 
-- [**Family management**](./familles/export/): export, import and rename families in bulk. <span class="avail">Revit 2021 → 2027</span>
-- [**Sales plans**](./plans/generer/): one view, one schedule and one sheet per dwelling. <span class="avail">Revit 2025 → 2027</span>
-- [**Projected Topo Area**](./topo/surface-projetee/): ground area of Toposolids. <span class="avail">Revit 2025 → 2027</span>
+- [**Family management**](./familles/export/) : export, import and rename families in bulk. <span class="avail">Revit 2021 → 2027</span>
+- [**Sales plans**](./plans/generer/) : one view, one schedule and one sheet per dwelling. <span class="avail">Revit 2025 → 2027</span>
+- [**Projected Topo Area**](./topo/surface-projetee/) : ground area of Toposolids. <span class="avail">Revit 2025 → 2027</span>

@@ -1,24 +1,24 @@
 ---
-title: Odd Tools — Docs
+title: Bienvenue
 description: Installer et utiliser les outils Odd Tools pour Revit.
-template: splash
-hero:
-  tagline: Des outils Revit simples, rapides et sur mesure. Installation, puis un guide pour chaque outil.
-  actions:
-    - text: Installer
-      link: ./demarrer/installation/
-      icon: right-arrow
-      variant: primary
-    - text: L'onglet dans Revit
-      link: ./demarrer/ruban/
-      variant: minimal
+sidebar:
+  order: 0
 ---
 
-import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import { Steps, Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
+**Odd Tools** ajoute un onglet à Revit avec des outils simples, rapides et sur mesure pour les tâches répétitives des projets BIM. Cette documentation explique comment l'installer et utiliser chaque outil.
+
 <Ribbon />
+
+## Pour commencer
+
+<CardGrid>
+  <LinkCard title="Installation" description="Installer Odd Tools et choisir les versions de Revit." href="./demarrer/installation/" />
+  <LinkCard title="L'onglet Odd Tools" description="Les panneaux et boutons du ruban." href="./demarrer/ruban/" />
+</CardGrid>
 
 ## Les outils
 

@@ -46,3 +46,4 @@ h1, h2, h3 { letter-spacing: -.01em; }
 /* encadres « note » en sarcelle (pas de bleu) */
 :root[data-theme="light"] { --sl-color-blue-low: #D7F0EC; --sl-color-blue: #0F9E8E; --sl-color-blue-high: #0A6B60; }
 :root:not([data-theme="light"]) { --sl-color-blue-low: #143A36; --sl-color-blue: #14B8A6; --sl-color-blue-high: #8DE3D8; }
+.keyrow { align-items: flex-start; } .keyrow .oddico { display: block; margin-bottom: .3rem; }
