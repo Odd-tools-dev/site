@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Odd Tools, des outils pour Revit</title>
-<meta name="description" content="Odd Tools ajoute un onglet à Revit : plans de ventes, gestion massive des familles, audit des maquettes et calcul de surfaces projetées.">
+<meta name="description" content="Odd Tools ajoute un onglet à Revit : plans de ventes, gestion massive des familles et calcul de surfaces projetées.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script>try{var t=localStorage.getItem("oddtools-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -23,7 +23,7 @@
   <main>
   <div class="hero">
     <h1>Des outils Revit simples, rapides et sur mesure.</h1>
-    <p class="lead">Odd Tools ajoute un onglet à Revit pour les tâches répétitives des projets BIM : plans de ventes, familles en masse, audit des maquettes, surfaces de terrain.</p>
+    <p class="lead">Odd Tools ajoute un onglet à Revit pour les tâches répétitives des projets BIM : plans de ventes, familles en masse, surfaces de terrain.</p>
     <div class="cta">
       <a class="btn primary" href="#outils">Voir les outils</a>
       <a class="btn line" href="#installation">Installation</a>
@@ -34,8 +34,7 @@
         <div class="tabs"><span>Architecture</span><span>Structure</span><span>Insérer</span><span class="on">Odd Tools</span><span>Gérer</span></div>
         <div class="bar">
           <div class="group"><div class="keys"><a class="key" href="#general"><img class="l" src="assets/icons/light/about.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/about.svg" alt="" width="64" height="64"><span>À propos<br>&nbsp;</span></a><a class="key" href="#general"><img class="l" src="assets/icons/light/options.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/options.svg" alt="" width="64" height="64"><span>Options<br>&nbsp;</span></a></div><div class="gname">Général</div></div>
-          <div class="group"><div class="keys"><a class="key" href="#familles"><img class="l" src="assets/icons/light/export.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/export.svg" alt="" width="64" height="64"><span>Export<br>Massif</span></a><a class="key" href="#familles"><img class="l" src="assets/icons/light/import.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/import.svg" alt="" width="64" height="64"><span>Import<br>Massif</span></a></div><div class="gname">Gestion des familles</div></div>
-          <div class="group"><div class="keys"><a class="key" href="#audit"><img class="l" src="assets/icons/light/audit.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/audit.svg" alt="" width="64" height="64"><span>Audit<br>/ fichier</span></a><a class="key" href="#audit"><img class="l" src="assets/icons/light/auditglobal.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/auditglobal.svg" alt="" width="64" height="64"><span>Analyse<br>/ globale</span></a></div><div class="gname">Audits des fichiers</div></div>
+          <div class="group"><div class="keys"><a class="key" href="#familles"><img class="l" src="assets/icons/light/export.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/export.svg" alt="" width="64" height="64"><span>Export<br>Massif</span></a><a class="key" href="#familles"><img class="l" src="assets/icons/light/import.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/import.svg" alt="" width="64" height="64"><span>Import<br>Massif</span></a><a class="key" href="#familles"><img class="l" src="assets/icons/light/rename.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/rename.svg" alt="" width="64" height="64"><span>Renommer<br>&nbsp;</span></a></div><div class="gname">Gestion des familles</div></div>
           <div class="group"><div class="keys"><a class="key" href="#topo"><img class="l" src="assets/icons/light/projectedarea.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/projectedarea.svg" alt="" width="64" height="64"><span>Surface Topo<br>Projetée</span></a></div><div class="gname">Toposolid</div></div>
           <div class="group"><div class="keys"><a class="key" href="#plans"><img class="l" src="assets/icons/light/plans.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/plans.svg" alt="" width="64" height="64"><span>Générer<br>les plans</span></a></div><div class="gname">Plans de ventes</div></div>
         </div>
@@ -62,32 +61,18 @@
     </article>
 
     <article class="tool" id="familles">
-      <div class="pics"><span><img class="l" src="assets/icons/light/export.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/export.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/import.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/import.svg" alt="" width="64" height="64"></span></div>
+      <div class="pics"><span><img class="l" src="assets/icons/light/export.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/export.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/import.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/import.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/rename.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/rename.svg" alt="" width="64" height="64"></span></div>
       <div>
         <h3>Gestion des familles</h3>
-        <div class="where">Export massif et Import massif</div>
-        <p>Exportez toutes les familles chargeables d'un projet dans un dossier, ou chargez-en des dizaines d'un coup depuis un dossier.</p>
+        <div class="where">Export massif, Import massif et Renommer</div>
+        <p>Exportez toutes les familles chargeables d'un projet dans un dossier, chargez-en des dizaines d'un coup depuis un dossier, ou renommez en lot les familles et leurs types.</p>
       </div>
       <ul>
         <li>Un sous-dossier par catégorie, au choix</li>
         <li>Version de Revit ajoutée au nom de fichier</li>
         <li>Famille déjà présente : ignorer ou remplacer, en gardant ou non les valeurs de paramètres</li>
         <li>Doublons repérés à l'import</li>
-      </ul>
-    </article>
-
-    <article class="tool" id="audit">
-      <div class="pics"><span><img class="l" src="assets/icons/light/audit.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/audit.svg" alt="" width="64" height="64"></span><span><img class="l" src="assets/icons/light/auditglobal.svg" alt="" width="64" height="64"><img class="d" src="assets/icons/dark/auditglobal.svg" alt="" width="64" height="64"></span></div>
-      <div>
-        <h3>Audit des fichiers</h3>
-        <div class="where">Audit par fichier et Analyse globale</div>
-        <p>Un audit en lecture seule des projets ouverts : un onglet par section et un export Excel automatique. L'analyse globale assemble plusieurs audits dans un tableau comparatif.</p>
-        <details><summary>Les 15 sections de l'audit</summary><ul class="chips"><li>Fichier</li><li>Imports CAD et liens</li><li>Familles chargeables</li><li>Familles système</li><li>Groupes</li><li>Vues et feuilles</li><li>Gabarits de vue</li><li>Détails 2D et matériaux</li><li>Niveaux et contraintes</li><li>Position du projet</li><li>Pièces</li><li>Phases</li><li>Variantes (options de conception)</li><li>Paramètres du projet</li><li>Nomenclatures</li></ul></details>
-      </div>
-      <ul>
-        <li>15 sections d'analyse</li>
-        <li>Indicateurs de couleur : conforme, à surveiller, à corriger</li>
-        <li>Plusieurs projets comparés d'un coup d'œil</li>
+        <li>Renommage en lot : filtres, préfixe et suffixe, rechercher et remplacer, aperçu avant d'appliquer</li>
       </ul>
     </article>
 
@@ -121,14 +106,14 @@
   <section id="installation" style="padding-top:1rem">
     <h2>Installation à la carte</h2>
     <div class="cols">
-      <div class="col"><h3>Un installateur par panneau</h3><p>Familles, Audit, Topographie ou Plans de ventes : n'installez que ce dont vous avez besoin.</p></div>
+      <div class="col"><h3>Un installateur par panneau</h3><p>Familles, Topographie ou Plans de ventes : n'installez que ce dont vous avez besoin.</p></div>
       <div class="col"><h3>Ou le pack complet</h3><p>Tous les panneaux en une seule installation. Les installateurs se cumulent, dans l'ordre que vous voulez.</p></div>
       <div class="col"><h3>Sans droits administrateur</h3><p>L'installation se fait pour l'utilisateur. La désinstallation est propre depuis Windows et vos réglages sont conservés.</p></div>
     </div>
     <div class="versions">
       <h3>Compatible avec</h3>
       <ul><li>Revit 2021</li><li>Revit 2022</li><li>Revit 2023</li><li>Revit 2024</li><li>Revit 2025</li><li>Revit 2026</li><li>Revit 2027</li></ul>
-      <p class="hint" style="flex-basis:100%;margin-top:0">Plans de ventes et Topographie sont disponibles à partir de Revit 2025 ; Gestion des familles et Audit, de Revit 2021 à 2027.</p>
+      <p class="hint" style="flex-basis:100%;margin-top:0">Plans de ventes et Topographie sont disponibles à partir de Revit 2025 ; Gestion des familles, de Revit 2021 à 2027.</p>
     </div>
   </section>
   </main>
@@ -137,7 +122,7 @@
     <div class="wrap inner" style="padding-block:clamp(2.5rem,6vw,4rem)">
       <div>
         <h2>Téléchargement</h2>
-        <p>Odd Tools est en version bêta 0.12. Les installateurs ne sont pas encore publics.</p>
+        <p>Odd Tools est en version bêta 0.13. Les installateurs ne sont pas encore publics.</p>
       </div>
       <div class="badge">Bientôt disponible</div>
     </div>
@@ -148,7 +133,7 @@
   <div class="wrap">
     <a class="brand" href="#" aria-label="Odd Tools"><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="mark-ring" cx="20" cy="28" r="13" fill="none" stroke-width="7"/><rect class="mark-sq" x="33" y="3" width="12" height="12" rx="3"/></svg><span><b>Odd</b> Tools</span></a>
     <span>Contact : <a href="mailto:odd.tools.dev@gmail.com">odd.tools.dev@gmail.com</a></span>
-    <span>Version 0.12 Beta</span>
+    <span>Version 0.13 Beta</span>
   </div>
 </footer>
 
