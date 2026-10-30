@@ -1,0 +1,34 @@
+---
+title: Export massif
+description: Exporter les familles chargeables d'un projet vers un dossier.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="export" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Enregistre en une fois toutes les familles chargeables (`.rfa`) d'un projet, ou seulement celles que vous choisissez, dans un dossier.
+
+## Utiliser l'outil
+
+<Steps>
+1. Ouvrez le projet, puis cliquez sur **Export Massif** (panneau Gestion des familles).
+2. **Dossier d'export** : choisissez le dossier de destination.
+3. **Familles à exporter** : cochez les familles voulues. Le champ de recherche filtre par nom de famille ou de catégorie. Le compteur indique « n sélectionnée(s) sur n affichée(s) ».
+4. Réglez les **options** (voir ci-dessous).
+5. Cliquez sur **Exporter**. Une barre de progression s'affiche, puis un résumé : familles exportées, ignorées, erreurs, durée, et un bouton pour ouvrir le dossier.
+</Steps>
+
+## Options
+
+- **Créer un sous-dossier par catégorie** : range les fichiers par catégorie. Sans sous-dossier, le nom de la catégorie est ajouté au nom du fichier en cas de doublon.
+- **Ajouter la version de Revit au nom du fichier** : un exemple du nom obtenu s'affiche sous l'option.
+- **Si le fichier existe déjà** : **Écraser** ou **Ignorer**.
+
+<Aside type="note">
+Seules les familles **chargeables** sont exportées. Les familles « en place » (in situ) ne peuvent pas l'être ; leur nombre est indiqué dans la fenêtre.
+</Aside>

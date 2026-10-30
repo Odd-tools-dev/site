@@ -1,0 +1,25 @@
+---
+title: L'onglet Odd Tools
+description: Les panneaux et boutons du ruban.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+Odd Tools ajoute un onglet **Odd Tools** au ruban de Revit. Il suit le thème de Revit : clair ou sombre (le thème sombre existe à partir de Revit 2024).
+
+<Ribbon />
+
+| Panneau | Boutons | Page |
+|---|---|---|
+| **Général** | <Icon name="about" /> À propos · <Icon name="options" /> Options | [Options](../options/) |
+| **Gestion des familles** | <Icon name="export" /> Export massif · <Icon name="import" /> Import massif · <Icon name="rename" /> Renommer | [Export](../../familles/export/) · [Import](../../familles/import/) · [Renommer](../../familles/renommer/) |
+| **Toposolid** | <Icon name="projectedarea" /> Surface Topo Projetée | [Surface Topo Projetée](../../topo/surface-projetee/) |
+| **Plans de ventes** | <Icon name="plans" /> Générer les plans | [Générer les plans](../../plans/generer/) |
+
+Le bouton **À propos** affiche la version installée.
+
+Seuls les panneaux installés apparaissent. Vous pouvez aussi en masquer dans les [Options](../options/).

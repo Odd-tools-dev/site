@@ -1,0 +1,56 @@
+---
+title: Renommer
+description: Renommer en lot les familles et leurs types.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="rename" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Une fenêtre liste toutes les familles, leurs types et leurs catégories. On renomme à la main, ou en lot avec préfixe, suffixe et rechercher/remplacer, puis on applique tout en une seule opération.
+
+## Le tableau
+
+Trois colonnes : **Catégorie** (non modifiable), **Famille** et **Type**. **Double-cliquez** sur un nom pour le modifier.
+
+- Les noms de **familles système** ne sont pas modifiables, mais leurs types le sont.
+- Les cellules modifiées sont **surlignées** avant l'application.
+- Passez la souris sur une cellule pour voir le nom d'origine.
+- En cas de problème, la cellule passe en rouge : nom vide, caractère interdit (`` \ : { } [ ] | ; < > ? ` ~ ``) ou nom déjà utilisé.
+
+## Filtrer ce qui est affiché
+
+Les filtres se trouvent à droite.
+
+- **Nature** : familles chargeables **ou** familles système (un seul choix à la fois).
+- **Type de catégorie** : Modèle, Annotation, Sur place (in situ), à cocher dans un menu déroulant.
+- **Catégories** : menu déroulant avec cases à cocher. La première ligne « Toutes les catégories » coche ou décoche tout.
+
+## Renommer en lot
+
+Choisissez d'abord la **cible** : les **familles**, les **types**, ou les deux.
+
+**Préfixe / Suffixe** : saisissez le texte à ajouter au début ou à la fin des noms.
+
+**Rechercher / Remplacer** : saisissez le texte à trouver et son remplacement. Options : **Respecter la casse** et **Expression régulière**.
+
+Chaque section a deux boutons :
+
+- **Tout** : s'applique à toutes les lignes actuellement affichées (selon les filtres).
+- **Sélection** : s'applique uniquement aux lignes sélectionnées dans le tableau.
+
+Rien n'est modifié dans Revit tant que vous n'avez pas cliqué sur **Renommer**. Le bouton **Réinitialiser** annule les changements en attente.
+
+## Appliquer
+
+Le bouton **Renommer (n)** s'active quand il y a des modifications et aucune erreur. Tout est appliqué dans **une seule opération**, annulable avec Ctrl+Z. Les noms appliqués passent en vert, puis une fenêtre résume le résultat et signale les éventuels avertissements. Vous restez ensuite dans la fenêtre de renommage.
+
+Les échanges de noms (A ↔ B) sont gérés.
+
+<Aside type="caution" title="Projet, pas fichiers">
+Le renommage modifie le **projet**, pas les fichiers `.rfa` sur le disque. Recharger la famille d'origine la recrée sous son ancien nom.
+</Aside>

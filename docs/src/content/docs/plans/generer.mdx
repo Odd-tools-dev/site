@@ -1,0 +1,64 @@
+---
+title: Générer les plans
+description: Une vue de plan, une nomenclature et une feuille par logement.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="plans" size="big" /> <span class="avail">Revit 2025 → 2027</span>
+
+Pour chaque logement du projet, Odd Tools crée :
+
+- une **vue de plan**, cadrée sur le contour du logement et **orientée selon la porte d'entrée** ;
+- une **nomenclature** ;
+- une **feuille** qui rassemble les deux.
+
+On peut générer les trois, ou seulement une partie.
+
+## Configurations
+
+En haut de la fenêtre, une **configuration** regroupe tous les réglages. Vous pouvez en enregistrer plusieurs sous des noms différents (par exemple une par type de projet), les sélectionner, les dupliquer (**+ Nouvelle**) ou les supprimer. Un repère « ● modifiée » signale que les réglages affichés diffèrent de la configuration enregistrée. À la fermeture ou à la génération, Odd Tools propose d'écraser la configuration, de l'enregistrer sous un autre nom ou de continuer sans enregistrer.
+
+## Réglage des vues
+
+**Logements**
+- **Catégorie des pièces** : Pièces ou Espaces.
+- **Propriété du N° de logement** : la propriété qui identifie chaque logement. Les pièces qui portent la même valeur forment un logement.
+
+**Niveaux concernés** : cochez les niveaux à traiter.
+
+**Porte d'entrée (repère d'orientation)** : la vue est tournée d'après la porte d'entrée. Choisissez la catégorie de la porte, puis comment la reconnaître :
+- par le **nom de la famille** ;
+- par la **famille et son type** ;
+- par la **famille et la valeur d'une propriété** (condition : égale à, contient, ou expression régulière).
+
+**Nom des vues** : préfixe, texte (propriété du logement), suffixe, et affichage du niveau dans le nom (toujours, jamais, ou seulement si le logement s'étend sur plusieurs niveaux). Un exemple du nom obtenu s'affiche dessous.
+
+**Type de vue** : le type de « Plan d'étage » à utiliser.
+
+## Réglage des nomenclatures
+
+- **Nom des nomenclatures** : même principe que pour les vues.
+- **Nomenclature de référence** : elle est **dupliquée pour chaque logement**, avec ses champs et son gabarit. Son filtre sur la propriété du N° de logement est corrigé s'il existe, ajouté sinon.
+
+## Réglage des feuilles
+
+- **Nom des feuilles** et **cartouche** à utiliser.
+- **Placement sur les feuilles** : placer les vues et/ou les nomenclatures.
+
+## Lancer
+
+Les boutons du bas s'adaptent à ce que vous cochez (vues, nomenclatures, feuilles). Une barre de progression s'affiche, puis un résumé indique ce qui a été créé et signale ce qui demande votre attention :
+
+- éléments **ignorés** parce qu'un nom ou un numéro existe déjà ;
+- pièces **sans numéro de logement** ;
+- logements **sans porte d'entrée** trouvée (vue non orientée) ou avec **plusieurs portes** (la première est utilisée) ;
+- vues gardées en cadrage rectangulaire quand le contour exact est impossible, ou dont l'orientation est à vérifier.
+
+<Aside type="tip">
+Avant de lancer sur un gros projet, testez sur un niveau ou quelques logements, puis enregistrez la configuration qui convient.
+</Aside>

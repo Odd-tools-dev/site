@@ -1,0 +1,64 @@
+---
+title: Generate plans
+description: One plan view, one schedule and one sheet per dwelling.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="plans" size="big" /> <span class="avail">Revit 2025 → 2027</span>
+
+For each dwelling in the project, Odd Tools creates:
+
+- a **plan view**, cropped to the dwelling outline and **oriented from the entrance door**;
+- a **schedule**;
+- a **sheet** that brings both together.
+
+You can generate all three, or only some.
+
+## Configurations
+
+At the top of the window, a **configuration** groups all the settings. You can save several under different names (one per project type, say), select them, duplicate them (**+ New**) or delete them. A “● modified” marker shows that the displayed settings differ from the saved configuration. When closing or generating, Odd Tools offers to overwrite the configuration, save it under another name or continue without saving.
+
+## View settings
+
+**Dwellings**
+- **Room category**: Rooms or Spaces.
+- **Dwelling number property**: the property that identifies each dwelling. Rooms with the same value form one dwelling.
+
+**Levels**: tick the levels to process.
+
+**Entrance door (orientation marker)**: the view is rotated from the entrance door. Choose the door category, then how to recognise it:
+- by **family name**;
+- by **family and type**;
+- by **family and a property value** (condition: equals, contains, or regular expression).
+
+**View name**: prefix, text (a dwelling property), suffix, and whether the level appears in the name (always, never, or only if the dwelling spans several levels). An example of the resulting name is shown below.
+
+**View type**: the “Floor Plan” type to use.
+
+## Schedule settings
+
+- **Schedule name**: same principle as views.
+- **Reference schedule**: it is **duplicated for each dwelling**, keeping its fields and template. Its filter on the dwelling number property is corrected if it exists, added otherwise.
+
+## Sheet settings
+
+- **Sheet name** and **title block** to use.
+- **Placement on sheets**: place the views and/or the schedules.
+
+## Run
+
+The buttons at the bottom adapt to what you tick (views, schedules, sheets). A progress bar appears, then a summary shows what was created and flags what needs your attention:
+
+- items **skipped** because a name or number already exists;
+- rooms **without a dwelling number**;
+- dwellings with **no entrance door** found (view not oriented) or with **several doors** (the first is used);
+- views kept with a rectangular crop when the exact outline is impossible, or whose orientation should be checked.
+
+<Aside type="tip">
+Before running on a large project, try one level or a few dwellings, then save the configuration that suits.
+</Aside>

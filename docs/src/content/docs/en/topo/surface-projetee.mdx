@@ -1,0 +1,33 @@
+---
+title: Projected Topo Area
+description: Compute the ground-projected area of a Toposolid.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="projectedarea" size="big" /> <span class="avail">Revit 2025 → 2027</span>
+
+Computes the **ground-projected area** of Toposolids and their subdivisions and writes it to a parameter you can use in schedules.
+
+## Prepare the parameter
+
+Create an **instance parameter of type Area**, bound to the **Toposolid** category. Its name is up to you; you will type it in the window.
+
+## Use the tool
+
+<Steps>
+1. Click **Projected Topo Area** (Toposolid panel).
+2. **Parameter to fill**: type the parameter name.
+3. **Elements to process**: tick **Toposolids**, **Toposolid subdivisions**, or both.
+4. Click **Run**.
+</Steps>
+
+A summary shows the parameter filled and the number of elements updated (Toposolids and subdivisions). Any errors are listed by element Id: geometry not found, parameter missing, read-only or of the wrong type.
+
+<Aside type="note">
+If the parameter does not exist on the selected elements, the tool tells you: check its name and its binding to the Toposolid category.
+</Aside>

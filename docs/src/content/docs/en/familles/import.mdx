@@ -1,0 +1,40 @@
+---
+title: Bulk Import
+description: Load dozens of families from a folder at once.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="import" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Loads the families (`.rfa`) of a folder and its subfolders into the project.
+
+## Use the tool
+
+<Steps>
+1. Open a **project** (not a family), then click **Bulk Import**.
+2. **Source folder**: choose the folder that contains the families.
+3. **Families to import**: the folder tree expands. Tick what you want to load; the search box filters folders and families.
+4. Choose what happens if the family already exists (below).
+5. Click **Import**. A summary shows what was loaded, replaced or skipped.
+</Steps>
+
+## What the list shows
+
+For each file: the **full name with extension**, its **status** relative to the project, its **size** and the **Revit version** it was saved in.
+
+A family saved in a **newer Revit version** than yours is **greyed out** and cannot be ticked: Revit cannot load it. The version is shown in red.
+
+## If the family already exists in the project
+
+- **Skip**: the project's family is left as is.
+- **Replace the existing version**: the family is reloaded, the project's parameter values are kept.
+- **Replace the existing version and parameter values**: the family and its values are replaced by those of the file.
+
+## Duplicates
+
+If several ticked files share the same family name, Odd Tools asks which one to load (or none).

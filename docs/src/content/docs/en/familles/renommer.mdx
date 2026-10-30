@@ -1,0 +1,56 @@
+---
+title: Rename
+description: Batch-rename families and their types.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="rename" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+One window lists every family, its types and its categories. Rename by hand, or in bulk with a prefix, suffix and find/replace, then apply everything in a single operation.
+
+## The table
+
+Three columns: **Category** (read-only), **Family** and **Type**. **Double-click** a name to edit it.
+
+- **System family** names cannot be edited, but their types can.
+- Edited cells are **highlighted** before you apply.
+- Hover a cell to see the original name.
+- When something is wrong, the cell turns red: empty name, forbidden character (`` \ : { } [ ] | ; < > ? ` ~ ``) or a name already in use.
+
+## Filter what is shown
+
+Filters are on the right.
+
+- **Nature**: loadable families **or** system families (one at a time).
+- **Category type**: Model, Annotation, In-place, ticked in a drop-down.
+- **Categories**: drop-down with checkboxes. The first row “All categories” ticks or unticks everything.
+
+## Rename in bulk
+
+First choose the **target**: **families**, **types**, or both.
+
+**Prefix / Suffix**: type the text to add at the start or end of names.
+
+**Find / Replace**: type the text to find and its replacement. Options: **Match case** and **Regular expression**.
+
+Each section has two buttons:
+
+- **All**: applies to every row currently displayed (according to the filters).
+- **Selection**: applies only to the rows selected in the table.
+
+Nothing changes in Revit until you click **Rename**. **Reset** discards pending changes.
+
+## Apply
+
+The **Rename (n)** button is enabled when there are changes and no errors. Everything is applied in **a single operation**, which you can undo with Ctrl+Z. Applied names turn green, then a window summarises the result and lists any warnings. You stay in the rename window afterwards.
+
+Name swaps (A ↔ B) are handled.
+
+<Aside type="caution" title="Project, not files">
+Renaming changes the **project**, not the `.rfa` files on disk. Reloading the original family recreates it under its old name.
+</Aside>

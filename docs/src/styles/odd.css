@@ -1,0 +1,48 @@
+/* Charte Odd Tools : magenta (accent), sarcelle (secondaire), neutres plats, pas d'ombres */
+:root {
+  --sl-font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --sl-font-mono: "Cascadia Mono", Consolas, "SF Mono", monospace;
+  --sl-content-width: 46rem;
+  --sl-text-h1: 2.25rem;
+  --sl-shadow-sm: none; --sl-shadow-md: none; --sl-shadow-lg: none;
+}
+:root[data-theme="light"] {
+  --sl-color-accent-low: #F6DCE9; --sl-color-accent: #C21E73; --sl-color-accent-high: #8F1550;
+  --sl-color-white: #1F1F1F; --sl-color-gray-1: #2B2B2E; --sl-color-gray-2: #45454A; --sl-color-gray-3: #5C5C60;
+  --sl-color-gray-4: #86868C; --sl-color-gray-5: #CFCFCF; --sl-color-gray-6: #E9E9EB; --sl-color-gray-7: #F5F5F5;
+  --sl-color-black: #FFFFFF; --sl-color-bg-nav: #FFFFFF; --sl-color-bg-sidebar: #F5F5F5;
+  --sl-color-hairline: #CFCFCF; --sl-color-text-accent: #C21E73;
+  --sl-color-bg-accent: #C21E73; --sl-color-text-invert: #FFFFFF;
+}
+:root:not([data-theme="light"]) {
+  --sl-color-accent-low: #40E64A98; --sl-color-accent: #E64A98; --sl-color-accent-high: #F5A3CC;
+  --sl-color-white: #E8E8EA; --sl-color-gray-1: #D8D8DC; --sl-color-gray-2: #BDBDC4; --sl-color-gray-3: #A9A9B0;
+  --sl-color-gray-4: #7C7C84; --sl-color-gray-5: #3F3F43; --sl-color-gray-6: #2D2D30; --sl-color-gray-7: #29292B;
+  --sl-color-black: #252526; --sl-color-bg-nav: #252526; --sl-color-bg-sidebar: #252526;
+  --sl-color-hairline: #3F3F43; --sl-color-text-accent: #E64A98;
+  --sl-color-bg-accent: #E64A98; --sl-color-text-invert: #2B0A1B;
+}
+.site-title { font-weight: 700; }
+h1, h2, h3 { letter-spacing: -.01em; }
+.sl-markdown-content h2 { border-bottom: 1px solid var(--sl-color-hairline); padding-bottom: .3rem; }
+.sl-markdown-content code { border-radius: 4px; }
+/* icones : variante selon le theme */
+.oddico .d { display: none; }
+:root:not([data-theme="light"]) .oddico .l { display: none; }
+:root:not([data-theme="light"]) .oddico .d { display: inline-block; }
+.oddico img { display: inline-block; vertical-align: middle; }
+.oddico.big img { width: 3rem; height: 3rem; }
+.oddico.mid img { width: 1.75rem; height: 1.75rem; margin-right: .5rem; }
+.keyrow { display: flex; gap: 1.25rem; flex-wrap: wrap; margin: 1rem 0; }
+.keyrow figure { margin: 0; text-align: center; font-size: .85rem; color: var(--sl-color-gray-3); }
+.ribbon-pic { border: 1px solid var(--sl-color-hairline); border-radius: 8px; width: 100%; }
+.ribbon-pic.d { display: none; }
+:root:not([data-theme="light"]) .ribbon-pic.l { display: none; }
+:root:not([data-theme="light"]) .ribbon-pic.d { display: block; }
+/* encadre « Revit » */
+.avail { display: inline-block; border: 1px solid var(--sl-color-hairline); border-radius: 999px; padding: .1rem .7rem; font-size: .8rem; font-weight: 600; color: #0F9E8E; }
+:root:not([data-theme="light"]) .avail { color: #14B8A6; }
+.starlight-aside--tip { --sl-color-asides-text-accent: #0F9E8E; }
+/* encadres « note » en sarcelle (pas de bleu) */
+:root[data-theme="light"] { --sl-color-blue-low: #D7F0EC; --sl-color-blue: #0F9E8E; --sl-color-blue-high: #0A6B60; }
+:root:not([data-theme="light"]) { --sl-color-blue-low: #143A36; --sl-color-blue: #14B8A6; --sl-color-blue-high: #8DE3D8; }

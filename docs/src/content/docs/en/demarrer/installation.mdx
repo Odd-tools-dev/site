@@ -1,0 +1,53 @@
+---
+title: Installation
+description: Install Odd Tools, choose Revit versions, uninstall.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+Odd Tools installs **per user**, with no administrator rights.
+
+## Pick an installer
+
+- **One installer per panel**: Families, Topography or Sales plans. Install only what you need.
+- **The complete pack**: every panel in a single installation.
+
+Installers **stack in any order**: installing Families then Sales plans gives the same result as the complete pack.
+
+<Aside type="note" title="Download">
+Installers are not publicly downloadable yet. To get one, write to [odd.tools.dev@gmail.com](mailto:odd.tools.dev@gmail.com).
+</Aside>
+
+## Install
+
+<Steps>
+1. **Close Revit**, then run the installer.
+2. **Tick the Revit versions** you want. Every year the panel supports is listed and ticked by default; Odd Tools does not detect which ones are actually installed on the computer.
+3. Finish the installation, then **start Revit**: the **Odd Tools** tab appears in the ribbon.
+</Steps>
+
+<Aside type="caution" title="Windows warning">
+The installers are not code-signed yet. Windows SmartScreen may show “unknown publisher”: click **More info**, then **Run anyway**.
+</Aside>
+
+## Compatibility
+
+| Panel | Revit 2021 → 2024 | Revit 2025 → 2027 |
+|---|:---:|:---:|
+| Family management | ✓ | ✓ |
+| Sales plans | — | ✓ |
+| Topography | — | ✓ |
+
+One installation covers several Revit versions. A panel is only offered for the versions it supports (Sales plans and Topography rely on Revit 2025+ features, such as Toposolid).
+
+## Settings
+
+Settings are saved per user **and per Revit version** in `%AppData%\OddTools\<year>\`. Each Revit version therefore starts with its own settings.
+
+## Uninstall
+
+From **Windows Settings → Apps**, like any program. Shared components are only removed with the last panel uninstalled. Your settings are kept in case you reinstall.

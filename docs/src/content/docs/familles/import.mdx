@@ -1,0 +1,40 @@
+---
+title: Import massif
+description: Charger des dizaines de familles depuis un dossier en une fois.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="import" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Charge dans le projet les familles (`.rfa`) d'un dossier et de ses sous-dossiers.
+
+## Utiliser l'outil
+
+<Steps>
+1. Ouvrez un **projet** (pas une famille), puis cliquez sur **Import Massif**.
+2. **Dossier source** : choisissez le dossier qui contient les familles.
+3. **Familles à importer** : l'arborescence des dossiers se déplie. Cochez ce que vous voulez charger ; le champ de recherche filtre dossiers et familles.
+4. Choisissez le comportement si la famille existe déjà (voir ci-dessous).
+5. Cliquez sur **Importer**. Un résumé indique ce qui a été chargé, remplacé ou ignoré.
+</Steps>
+
+## Ce que montre la liste
+
+Pour chaque fichier : le **nom complet avec l'extension**, son **état** par rapport au projet, son **poids** et la **version de Revit** dans laquelle il a été enregistré.
+
+Une famille enregistrée dans une **version de Revit plus récente** que la vôtre est **grisée** et ne peut pas être cochée : Revit ne peut pas la charger. La version s'affiche en rouge.
+
+## Si la famille existe déjà dans le projet
+
+- **Ignorer** : la famille du projet reste telle quelle.
+- **Remplacer la version existante** : la famille est rechargée, les valeurs de paramètres du projet sont conservées.
+- **Remplacer la version existante et les valeurs de paramètres** : la famille et ses valeurs sont remplacées par celles du fichier.
+
+## Doublons
+
+Si plusieurs fichiers cochés portent le même nom de famille, Odd Tools vous demande lequel charger (ou aucun).

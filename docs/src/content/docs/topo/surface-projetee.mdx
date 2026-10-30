@@ -1,0 +1,33 @@
+---
+title: Surface Topo Projetée
+description: Calculer la surface projetée au sol d'un Toposolid.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="projectedarea" size="big" /> <span class="avail">Revit 2025 → 2027</span>
+
+Calcule la **surface projetée au sol** des Toposolids et de leurs sous-divisions, et l'écrit dans un paramètre pour l'utiliser dans les nomenclatures.
+
+## Préparer le paramètre
+
+Créez un **paramètre d'instance de type Surface**, lié à la catégorie **Toposolid**. Son nom est libre ; vous le saisirez dans la fenêtre.
+
+## Utiliser l'outil
+
+<Steps>
+1. Cliquez sur **Surface Topo Projetée** (panneau Toposolid).
+2. **Paramètre à renseigner** : saisissez le nom du paramètre.
+3. **Éléments à traiter** : cochez **Toposolids**, **Sous-divisions de Toposolid**, ou les deux.
+4. Cliquez sur **Lancer**.
+</Steps>
+
+Un résumé indique le paramètre renseigné et le nombre d'éléments mis à jour (Toposolids et sous-divisions). Les erreurs éventuelles sont listées par identifiant d'élément : géométrie introuvable, paramètre absent, en lecture seule ou de mauvais type.
+
+<Aside type="note">
+Si le paramètre n'existe pas sur les éléments sélectionnés, l'outil vous le dit : vérifiez son nom et sa liaison à la catégorie Toposolid.
+</Aside>

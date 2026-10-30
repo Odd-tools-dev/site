@@ -1,0 +1,53 @@
+---
+title: Installation
+description: Installer Odd Tools, choisir les versions de Revit, désinstaller.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+Odd Tools s'installe **par utilisateur**, sans droits administrateur.
+
+## Choisir son installateur
+
+- **Un installateur par panneau** : Familles, Topographie ou Plans de ventes. On n'installe que ce dont on a besoin.
+- **Le pack complet** : tous les panneaux en une seule installation.
+
+Les installateurs se **cumulent dans n'importe quel ordre** : installer Familles puis Plans de ventes donne le même résultat que le pack complet.
+
+<Aside type="note" title="Téléchargement">
+Les installateurs ne sont pas encore proposés en téléchargement public. Pour en obtenir un, écrivez à [odd.tools.dev@gmail.com](mailto:odd.tools.dev@gmail.com).
+</Aside>
+
+## Installer
+
+<Steps>
+1. **Fermez Revit**, puis lancez l'installateur.
+2. **Cochez les versions de Revit** voulues. Toutes les années prises en charge par le panneau sont proposées et cochées par défaut ; Odd Tools ne détecte pas celles qui sont réellement installées sur le poste.
+3. Terminez l'installation, puis **lancez Revit** : l'onglet **Odd Tools** apparaît dans le ruban.
+</Steps>
+
+<Aside type="caution" title="Avertissement Windows">
+Les installateurs ne sont pas encore signés numériquement. Windows SmartScreen peut afficher « éditeur inconnu » : cliquez sur **Informations complémentaires**, puis **Exécuter quand même**.
+</Aside>
+
+## Compatibilité
+
+| Panneau | Revit 2021 → 2024 | Revit 2025 → 2027 |
+|---|:---:|:---:|
+| Gestion des familles | ✓ | ✓ |
+| Plans de ventes | — | ✓ |
+| Topographie | — | ✓ |
+
+Une même installation couvre plusieurs versions de Revit. Un panneau n'est proposé que pour les versions qu'il prend en charge (Plans de ventes et Topographie reposent sur des fonctions de Revit 2025 et plus, comme le Toposolid).
+
+## Réglages
+
+Les réglages sont enregistrés par utilisateur **et par version de Revit** dans `%AppData%\OddTools\<année>\`. Chaque version de Revit démarre donc avec ses propres réglages.
+
+## Désinstaller
+
+Depuis **Paramètres Windows → Applications**, comme n'importe quel programme. Les composants communs ne sont retirés qu'avec le dernier panneau désinstallé. Vos réglages sont conservés au cas où vous réinstalleriez.

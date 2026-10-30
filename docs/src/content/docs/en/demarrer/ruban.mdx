@@ -1,0 +1,25 @@
+---
+title: The Odd Tools tab
+description: Panels and buttons in the ribbon.
+sidebar:
+  order: 2
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+Odd Tools adds an **Odd Tools** tab to the Revit ribbon. It follows the Revit theme: light or dark (the dark theme exists from Revit 2024).
+
+<Ribbon />
+
+| Panel | Buttons | Page |
+|---|---|---|
+| **General** | <Icon name="about" /> About · <Icon name="options" /> Options | [Options](../options/) |
+| **Family management** | <Icon name="export" /> Bulk Export · <Icon name="import" /> Bulk Import · <Icon name="rename" /> Rename | [Export](../../familles/export/) · [Import](../../familles/import/) · [Rename](../../familles/renommer/) |
+| **Toposolid** | <Icon name="projectedarea" /> Projected Topo Area | [Projected Topo Area](../../topo/surface-projetee/) |
+| **Sales plans** | <Icon name="plans" /> Generate plans | [Generate plans](../../plans/generer/) |
+
+The **About** button shows the installed version.
+
+Only installed panels appear. You can also hide some in [Options](../options/).

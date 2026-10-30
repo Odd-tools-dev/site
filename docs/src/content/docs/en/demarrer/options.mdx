@@ -1,0 +1,28 @@
+---
+title: Options
+description: Choose which panels are shown and the window theme.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="options" size="big" />
+
+The **Options** button (General panel) sets two things.
+
+## Panels shown in the ribbon
+
+Tick the panels to show. The General panel (About, Options) is always visible. The change applies immediately.
+
+## Window appearance
+
+Choose **Light**, **Dark** or **Set by Revit** for the tools' windows. The choice applies the next time a window opens.
+
+<Aside>
+Ribbon icons always follow the Revit theme. “Set by Revit” is only available with Revit 2024 and later; before that, windows are light.
+</Aside>
+
+Click **Save** to confirm. Settings are specific to this computer and this Revit version.

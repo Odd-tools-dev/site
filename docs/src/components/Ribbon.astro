@@ -1,0 +1,7 @@
+---
+const lang = Astro.currentLocale === 'en' ? 'en' : 'fr';
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
+const alt = lang === 'en' ? 'Odd Tools tab in the Revit ribbon' : "Onglet Odd Tools dans le ruban de Revit";
+---
+<img class="ribbon-pic l" src={`${b}/img/ruban-${lang}-clair.png`} alt={alt} />
+<img class="ribbon-pic d" src={`${b}/img/ruban-${lang}-sombre.png`} alt={alt} />

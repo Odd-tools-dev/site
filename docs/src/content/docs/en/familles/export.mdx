@@ -1,0 +1,34 @@
+---
+title: Bulk Export
+description: Export a project's loadable families to a folder.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="export" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Saves all of a project's loadable families (`.rfa`), or only the ones you pick, to a folder in one go.
+
+## Use the tool
+
+<Steps>
+1. Open the project, then click **Bulk Export** (Family management panel).
+2. **Export folder**: choose the destination.
+3. **Families to export**: tick the families you want. The search box filters by family or category name. The counter reads “n selected of n shown”.
+4. Set the **options** (below).
+5. Click **Export**. A progress bar appears, then a summary: families exported, skipped, errors, duration, and a button to open the folder.
+</Steps>
+
+## Options
+
+- **Create a subfolder per category**: sorts files by category. Without subfolders, the category name is added to the file name when there is a duplicate.
+- **Add the Revit version to the file name**: an example of the resulting name is shown under the option.
+- **If the file already exists**: **Overwrite** or **Skip**.
+
+<Aside type="note">
+Only **loadable** families are exported. In-place families cannot be; their number is shown in the window.
+</Aside>

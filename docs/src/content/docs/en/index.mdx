@@ -1,0 +1,35 @@
+---
+title: Odd Tools — Docs
+description: Install and use the Odd Tools plugin for Revit.
+template: splash
+hero:
+  tagline: Simple, fast, made-to-measure Revit tools. Installation, then a guide for each tool.
+  actions:
+    - text: Install
+      link: ./demarrer/installation/
+      icon: right-arrow
+      variant: primary
+    - text: The tab in Revit
+      link: ./demarrer/ruban/
+      variant: minimal
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Ribbon />
+
+## The tools
+
+<div class="keyrow">
+  <figure><Icon name="export" size="big" /><br/>Bulk Export</figure>
+  <figure><Icon name="import" size="big" /><br/>Bulk Import</figure>
+  <figure><Icon name="rename" size="big" /><br/>Rename</figure>
+  <figure><Icon name="projectedarea" size="big" /><br/>Projected Topo Area</figure>
+  <figure><Icon name="plans" size="big" /><br/>Sales plans</figure>
+</div>
+
+- [**Family management**](./familles/export/): export, import and rename families in bulk. <span class="avail">Revit 2021 → 2027</span>
+- [**Sales plans**](./plans/generer/): one view, one schedule and one sheet per dwelling. <span class="avail">Revit 2025 → 2027</span>
+- [**Projected Topo Area**](./topo/surface-projetee/): ground area of Toposolids. <span class="avail">Revit 2025 → 2027</span>

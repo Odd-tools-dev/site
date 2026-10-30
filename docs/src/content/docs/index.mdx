@@ -1,0 +1,35 @@
+---
+title: Odd Tools — Docs
+description: Installer et utiliser les outils Odd Tools pour Revit.
+template: splash
+hero:
+  tagline: Des outils Revit simples, rapides et sur mesure. Installation, puis un guide pour chaque outil.
+  actions:
+    - text: Installer
+      link: ./demarrer/installation/
+      icon: right-arrow
+      variant: primary
+    - text: L'onglet dans Revit
+      link: ./demarrer/ruban/
+      variant: minimal
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Ribbon />
+
+## Les outils
+
+<div class="keyrow">
+  <figure><Icon name="export" size="big" /><br/>Export massif</figure>
+  <figure><Icon name="import" size="big" /><br/>Import massif</figure>
+  <figure><Icon name="rename" size="big" /><br/>Renommer</figure>
+  <figure><Icon name="projectedarea" size="big" /><br/>Surface Topo Projetée</figure>
+  <figure><Icon name="plans" size="big" /><br/>Plans de ventes</figure>
+</div>
+
+- [**Gestion des familles**](./familles/export/) : exporter, importer et renommer les familles en masse. <span class="avail">Revit 2021 → 2027</span>
+- [**Plans de ventes**](./plans/generer/) : une vue, une nomenclature et une feuille par logement. <span class="avail">Revit 2025 → 2027</span>
+- [**Surface Topo Projetée**](./topo/surface-projetee/) : surface au sol des Toposolids. <span class="avail">Revit 2025 → 2027</span>

@@ -1,0 +1,28 @@
+---
+title: Options
+description: Choisir les panneaux affichés et le thème des fenêtres.
+sidebar:
+  order: 3
+---
+
+import { Steps, Aside, Badge } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+import Ribbon from '~/components/Ribbon.astro';
+
+<Icon name="options" size="big" />
+
+Le bouton **Options** (panneau Général) règle deux choses.
+
+## Panneaux affichés dans le ruban
+
+Cochez les panneaux à afficher. Le panneau Général (À propos, Options) reste toujours visible. Le changement s'applique immédiatement.
+
+## Apparence des fenêtres
+
+Choisissez **Clair**, **Sombre** ou **Défini par Revit** pour les fenêtres des outils. Le choix s'applique à la prochaine ouverture d'une fenêtre.
+
+<Aside>
+Les icônes du ruban suivent toujours le thème de Revit. « Défini par Revit » n'est disponible qu'avec Revit 2024 et plus ; avant, les fenêtres sont claires.
+</Aside>
+
+Cliquez sur **Enregistrer** pour valider. Les réglages sont propres à ce poste et à cette version de Revit.
