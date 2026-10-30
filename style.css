@@ -80,7 +80,7 @@ h1 { font: 300 clamp(2.4rem, 6.2vw, 4.6rem)/1.05 var(--display); letter-spacing:
 /* outils */
 section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 h2 { font: 300 clamp(1.8rem, 3.6vw, 2.6rem)/1.15 var(--display); letter-spacing: -.02em; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
-.tool { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) minmax(0, 20rem); gap: 1.5rem 2.5rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
+.tool { display: grid; grid-template-columns: 12.5rem minmax(0, 1fr) minmax(0, 20rem); gap: 1.5rem 2.5rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
 .tool:last-of-type { border-bottom: 1px solid var(--line); }
 .pics { display: flex; gap: .6rem; align-items: flex-start; }
 .pics img { width: 56px; height: 56px; }
