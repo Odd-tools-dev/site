@@ -1,0 +1,51 @@
+---
+title: Sort into worksets
+description: Automatically move elements into worksets using rules.
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+
+<Icon name="rules" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Create **rules** that sort elements into worksets: by category, family name, type, instance or type parameters. Rules are applied **in order** and can be **saved as configurations**.
+
+<Aside>
+Only elements **already in a user workset** are processed. Elements in Revit's own worksets (views, families, standards) are never touched, nor those **borrowed by another user**. Collaboration must be enabled (**Worksets** button).
+</Aside>
+
+## Rules
+
+Each table row is a rule: a name, **conditions** and a **target workset**. Rules are read **from top to bottom**: an element matching several rules is sorted by the **first** one. Use **Move up / Move down** to change the order, the **On** box to set a rule aside.
+
+An element that no rule matches is not moved.
+
+## Conditions
+
+A rule holds conditions joined by **AND** (all true) or **OR** (at least one). A **group** can contain other groups: `category = Walls AND (family starts with ARC_ OR family starts with STR_)`.
+
+| Field | Content |
+| --- | --- |
+| **Category** | The element's category. |
+| **Family** | Family name. |
+| **Type (name)** | Type name. |
+| **Instance / type parameter** | Value of a parameter, entered by name. |
+| **Level** | The element's level. |
+
+Operators: equals, is not, contains, does not contain, starts with, ends with, regular expression, is empty, is not empty. Case is ignored.
+
+## Target workset
+
+Pick a workset of the project or **type a new name**: it will be created when applying.
+
+## Scope, preview, apply
+
+- **Scope**: whole project, active view or selection.
+- **Preview…**: shows how many elements will move to each workset, without changing anything.
+- **Apply** / **Apply and close**: moves the elements in a single operation, undoable with **Ctrl+Z**.
+
+## Configurations
+
+Rules are **saved** in configurations (**+ New**, **Save**, bin), **imported** and **exported** as `.json`. **● modified** means the rules differ from the saved configuration; the window offers to save on close. Choosing a configuration **replaces** the displayed rules.

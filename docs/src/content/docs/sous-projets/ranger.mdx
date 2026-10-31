@@ -1,0 +1,51 @@
+---
+title: Ranger dans les sous-projets
+description: Déplacer automatiquement les éléments dans les sous-projets selon des règles.
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+
+<Icon name="rules" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Crée des **règles** qui rangent les éléments dans les sous-projets : par catégorie, nom de famille, type, paramètres d'instance ou de type. Les règles sont appliquées **dans l'ordre** et on peut les **enregistrer en configurations**.
+
+<Aside>
+Seuls les éléments **déjà placés dans un sous-projet utilisateur** sont traités. Les éléments des sous-projets de Revit (vues, familles, standards) ne sont jamais touchés, ni ceux **empruntés par un autre utilisateur**. Le mode collaboratif doit être activé (bouton **Sous-projets**).
+</Aside>
+
+## Les règles
+
+Chaque ligne du tableau est une règle : un nom, des **conditions** et un **sous-projet cible**. Les règles sont lues **de haut en bas** : un élément qui correspond à plusieurs règles est rangé par la **première**. Utilisez **Monter / Descendre** pour changer l'ordre, la case **Actif** pour mettre une règle de côté.
+
+Un élément qu'aucune règle ne concerne n'est pas déplacé.
+
+## Les conditions
+
+Une règle contient des conditions réunies par **ET** (toutes vraies) ou **OU** (au moins une). Un **groupe** peut contenir d'autres groupes : `catégorie = Murs ET (famille commence par ARC_ OU famille commence par STR_)`.
+
+| Champ | Contenu |
+| --- | --- |
+| **Catégorie** | Catégorie de l'élément. |
+| **Famille** | Nom de la famille. |
+| **Type (nom)** | Nom du type. |
+| **Paramètre d'instance / de type** | Valeur d'un paramètre, à saisir par son nom. |
+| **Niveau** | Niveau de l'élément. |
+
+Opérateurs : est égal à, est différent de, contient, ne contient pas, commence par, se termine par, expression régulière, est vide, n'est pas vide. La casse est ignorée.
+
+## Sous-projet cible
+
+Choisissez un sous-projet du projet ou **tapez un nouveau nom** : il sera créé à l'application.
+
+## Portée, aperçu, application
+
+- **Portée** : tout le projet, la vue active ou la sélection.
+- **Aperçu…** : montre combien d'éléments seront déplacés vers chaque sous-projet, sans rien modifier.
+- **Appliquer** / **Appliquer et fermer** : déplace les éléments en une seule opération, annulable d'un **Ctrl+Z**.
+
+## Configurations
+
+Les règles se **mémorisent** dans des configurations (**+ Nouvelle**, **Enregistrer**, corbeille), s'**importent** et s'**exportent** en `.json`. **● modifiée** signale des règles différentes de la configuration enregistrée ; la fenêtre propose de l'enregistrer à la fermeture. Choisir une configuration **remplace** les règles affichées.

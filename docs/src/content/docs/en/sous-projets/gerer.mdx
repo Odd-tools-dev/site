@@ -1,0 +1,64 @@
+---
+title: Worksets
+description: Create, rename, delete and configure the worksets of a project.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+
+<Icon name="worksets" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+One window to manage **user worksets**: create, rename, delete, set "Visible in all views" and save **configurations** to reuse from one project to another.
+
+## Collaboration
+
+Worksets only exist when **collaboration** is enabled. If it is not, the button shows a window offering to enable it:
+
+- **Levels and grids**: name of the workset that receives levels and grids (default "Niveaux et quadrillages partagés").
+- **Rest of the project**: name of the workset that receives everything else (default "projet").
+
+<Aside type="caution">
+Enabling collaboration is not easy to undo. **Save the file** afterwards to keep this setting.
+</Aside>
+
+## The table
+
+One row per user workset. **Double-click** a name to edit it.
+
+| Column | Purpose |
+| --- | --- |
+| **Name** | Editable. |
+| **Visible in all views** | As in Revit's Worksets dialog. |
+| **Include in config** | Chooses which worksets are saved in the configuration. |
+| **Elements** | Number of elements in the workset. |
+| **Status** | New, renamed, to delete, applied, borrowed… |
+
+Changes are **colored** before being applied: accent for new / modified, green for applied, red strikethrough for to delete. An empty or duplicated name turns red.
+
+## Add, delete
+
+- **Add**: type a name then **Add** (or Enter).
+- **Delete**: select one or more rows then **Delete**. A window asks **which workset the elements should be moved to**. **Undo** cancels a pending deletion.
+
+<Aside>
+A workset **borrowed by another user** cannot be renamed or deleted. Deleting a workset is only possible from **Revit 2022** (Revit API limit).
+</Aside>
+
+## Apply
+
+Nothing changes in Revit until you click a button:
+
+- **Apply**: applies and keeps the window open.
+- **Apply and close**.
+- **Close**: asks for confirmation if some changes are not applied.
+
+## Configurations
+
+A configuration stores a list of worksets (names and visibility): the ones whose **Include in config** box is ticked.
+
+- **+ New** creates a configuration, **Save** updates the active one, the bin deletes it.
+- **● modified** appears when the selection no longer matches the saved configuration. On close, the window offers to save it.
+- **Import… / Export…** exchange a configuration as a `.json` file.
+- Choosing a configuration **adds** it to what the project already contains: nothing is ever deleted.

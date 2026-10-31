@@ -32,6 +32,10 @@ export default defineConfig({
           { slug: 'familles/import' },
           { slug: 'familles/renommer' },
         ]},
+        { label: 'Sous-projets', translations: { en: 'Worksets' }, items: [
+          { slug: 'sous-projets/gerer' },
+          { slug: 'sous-projets/ranger' },
+        ] },
         { label: 'Plans de ventes', translations: { en: 'Sales plans' }, items: [
           { slug: 'plans/generer' },
         ]},

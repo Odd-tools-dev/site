@@ -1,0 +1,64 @@
+---
+title: Sous-projets
+description: Créer, renommer, supprimer et configurer les sous-projets (worksets) d'un projet.
+sidebar:
+  order: 1
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+import Icon from '~/components/Icon.astro';
+
+<Icon name="worksets" size="big" /> <span class="avail">Revit 2021 → 2027</span>
+
+Une seule fenêtre pour gérer les **sous-projets utilisateurs** (worksets) : créer, renommer, supprimer, régler « Visible dans toutes les vues » et mémoriser des **configurations** à réutiliser d'un projet à l'autre.
+
+## Mode collaboratif
+
+Les sous-projets n'existent que si le **mode collaboratif** est activé. Si ce n'est pas le cas, le bouton affiche une fenêtre qui propose de l'activer :
+
+- **Niveaux et quadrillages** : nom du sous-projet qui reçoit les niveaux et quadrillages (par défaut « Niveaux et quadrillages partagés »).
+- **Reste du projet** : nom du sous-projet qui reçoit tout le reste (par défaut « projet »).
+
+<Aside type="caution">
+L'activation du mode collaboratif n'est pas simple à annuler. **Enregistrez le fichier** ensuite pour conserver ce réglage.
+</Aside>
+
+## Le tableau
+
+Une ligne par sous-projet utilisateur. **Double-cliquez** sur un nom pour le modifier.
+
+| Colonne | Rôle |
+| --- | --- |
+| **Nom** | Modifiable. |
+| **Visible dans toutes les vues** | Comme dans la fenêtre Sous-projets de Revit. |
+| **Inclure dans la config** | Choisit les sous-projets mémorisés dans la configuration. |
+| **Éléments** | Nombre d'éléments du sous-projet. |
+| **État** | Nouveau, renommé, à supprimer, appliqué, emprunté… |
+
+Les modifications sont **colorées** avant d'être appliquées : accent pour nouveau / modifié, vert pour appliqué, rouge barré pour à supprimer. Un nom vide ou en double passe en rouge.
+
+## Ajouter, supprimer
+
+- **Ajouter** : saisissez un nom puis **Ajouter** (ou Entrée).
+- **Supprimer** : sélectionnez une ou plusieurs lignes puis **Supprimer**. Une fenêtre demande **dans quel sous-projet déplacer les éléments**. **Annuler** retire la suppression en attente.
+
+<Aside>
+Un sous-projet **emprunté par un autre utilisateur** ne peut pas être renommé ni supprimé. La suppression d'un sous-projet n'est possible qu'à partir de **Revit 2022** (limite de l'API de Revit).
+</Aside>
+
+## Appliquer
+
+Rien n'est modifié dans Revit tant que vous n'avez pas cliqué sur un bouton :
+
+- **Appliquer** : applique et laisse la fenêtre ouverte.
+- **Appliquer et fermer**.
+- **Fermer** : si des modifications ne sont pas appliquées, une confirmation est demandée.
+
+## Configurations
+
+Une configuration mémorise une liste de sous-projets (noms et visibilité) : ceux dont la case **Inclure dans la config** est cochée.
+
+- **+ Nouvelle** crée une configuration, **Enregistrer** met à jour la configuration active, la corbeille la supprime.
+- **● modifiée** apparaît quand la sélection ne correspond plus à la configuration enregistrée. À la fermeture, la fenêtre propose de l'enregistrer.
+- **Importer… / Exporter…** échangent une configuration au format `.json`.
+- Choisir une configuration l'**ajoute** à ce que le projet contient déjà : rien n'est jamais supprimé.
