@@ -1,0 +1,12 @@
+---
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+const en = Astro.currentLocale === 'en';
+const home = import.meta.env.BASE_URL.replace(/\/docs\/?$/, '/');
+---
+<a class="site-back" href={home}>← {en ? 'Back to the site' : 'Retour au site'}</a>
+<Default {...Astro.props}><slot /></Default>
+<style>
+  .site-back { font-size: .9rem; font-weight: 600; color: var(--sl-color-text-accent); text-decoration: none; white-space: nowrap; margin-inline-end: 1rem; }
+  .site-back:hover { text-decoration: underline; }
+  @media (max-width: 50rem) { .site-back { font-size: .8rem; margin-inline-end: .5rem; } }
+</style>
