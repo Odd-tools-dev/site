@@ -7,10 +7,13 @@ sidebar:
 
 import { Steps, Aside } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 
 <Icon name="worksets" size="big" /> <span class="avail">Revit 2021 → 2027</span>
 
 Une seule fenêtre pour gérer les **sous-projets utilisateurs** (worksets) : créer, renommer, supprimer, régler « Visible dans toutes les vues » et mémoriser des **configurations** à réutiliser d'un projet à l'autre.
+
+<Win name="worksets" alt="Fenêtre Sous-projets" />
 
 ## Mode collaboratif
 
@@ -22,6 +25,8 @@ Les sous-projets n'existent que si le **mode collaboratif** est activé. Si ce n
 <Aside type="caution">
 L'activation du mode collaboratif n'est pas simple à annuler. **Enregistrez le fichier** ensuite pour conserver ce réglage.
 </Aside>
+
+<Win name="worksets-enable" alt="Activation du mode collaboratif" narrow />
 
 ## Le tableau
 
@@ -37,6 +42,8 @@ Une ligne par sous-projet utilisateur. **Double-cliquez** sur un nom pour le mod
 
 Les modifications sont **colorées** avant d'être appliquées : accent pour nouveau / modifié, vert pour appliqué, rouge barré pour à supprimer. Un nom vide ou en double passe en rouge.
 
+<Win name="worksets-table" alt="Tableau des sous-projets" />
+
 ## Ajouter, supprimer
 
 - **Ajouter** : saisissez un nom puis **Ajouter** (ou Entrée).
@@ -46,6 +53,8 @@ Les modifications sont **colorées** avant d'être appliquées : accent pour nou
 Un sous-projet **emprunté par un autre utilisateur** ne peut pas être renommé ni supprimé. La suppression d'un sous-projet n'est possible qu'à partir de **Revit 2022** (limite de l'API de Revit).
 </Aside>
 
+<Win name="worksets-delete" alt="Suppression d'un sous-projet" narrow />
+
 ## Appliquer
 
 Rien n'est modifié dans Revit tant que vous n'avez pas cliqué sur un bouton :
@@ -53,6 +62,8 @@ Rien n'est modifié dans Revit tant que vous n'avez pas cliqué sur un bouton :
 - **Appliquer** : applique et laisse la fenêtre ouverte.
 - **Appliquer et fermer**.
 - **Fermer** : si des modifications ne sont pas appliquées, une confirmation est demandée.
+
+<Win name="worksets-cfg" alt="Barre de configuration" />
 
 ## Configurations
 

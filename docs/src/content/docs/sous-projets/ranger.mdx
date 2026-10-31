@@ -7,6 +7,7 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 
 <Icon name="rules" size="big" /> <span class="avail">Revit 2021 → 2027</span>
 
@@ -16,11 +17,19 @@ Crée des **règles** qui rangent les éléments dans les sous-projets : par cat
 Seuls les éléments **déjà placés dans un sous-projet utilisateur** sont traités. Les éléments des sous-projets de Revit (vues, familles, standards) ne sont jamais touchés, ni ceux **empruntés par un autre utilisateur**. Le mode collaboratif doit être activé (bouton **Sous-projets**).
 </Aside>
 
+<Win name="rules" alt="Fenêtre Ranger dans les sous-projets" />
+
 ## Les règles
 
-Chaque ligne du tableau est une règle : un nom, des **conditions** et un **sous-projet cible**. Les règles sont lues **de haut en bas** : un élément qui correspond à plusieurs règles est rangé par la **première**. Utilisez **Monter / Descendre** pour changer l'ordre, la case **Actif** pour mettre une règle de côté.
+Chaque ligne du tableau est une règle : un nom, des **conditions** et un **sous-projet cible**. Les règles **s'exécutent l'une après l'autre, de haut en bas**. Un élément qui correspond à plusieurs règles finit dans le sous-projet de la **dernière** : placez les règles générales en haut et les cas particuliers en dessous. Utilisez **Monter / Descendre** pour changer l'ordre, la case **Actif** pour mettre une règle de côté.
 
 Un élément qu'aucune règle ne concerne n'est pas déplacé.
+
+Un **⚠** dans la colonne **Éléments** (après un **Aperçu…**) signale qu'une partie des éléments de la règle est reprise par une règle placée plus bas.
+
+**Exemple** : la règle 1 range tous les murs dans « ARC_Murs » ; la règle 2 (catégorie = Murs **ET** type contient « 50 ») les reprend pour les mettre dans « GC ».
+
+<Win name="rules-table" alt="Tableau des règles" />
 
 ## Les conditions
 
@@ -36,15 +45,23 @@ Une règle contient des conditions réunies par **ET** (toutes vraies) ou **OU**
 
 Opérateurs : est égal à, est différent de, contient, ne contient pas, commence par, se termine par, expression régulière, est vide, n'est pas vide. La casse est ignorée.
 
+<Win name="rules-editor" alt="Éditeur d'une règle" narrow />
+
 ## Sous-projet cible
 
 Choisissez un sous-projet du projet ou **tapez un nouveau nom** : il sera créé à l'application.
+
+Pour créer une règle, cliquez sur **+ Ajouter une règle** : la règle reste un **brouillon** tant que vous n'avez pas cliqué sur **Ajouter à la liste** (elle n'est ni appliquée ni comptée avant).
+
+<Win name="rules-new-editor" alt="Nouvelle règle, pas encore dans la liste" narrow />
 
 ## Portée, aperçu, application
 
 - **Portée** : tout le projet, la vue active ou la sélection.
 - **Aperçu…** : montre combien d'éléments seront déplacés vers chaque sous-projet, sans rien modifier.
 - **Appliquer** / **Appliquer et fermer** : déplace les éléments en une seule opération, annulable d'un **Ctrl+Z**.
+
+<Win name="rules-preview" alt="Aperçu du rangement" />
 
 ## Configurations
 

@@ -7,6 +7,7 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 
 <Icon name="rules" size="big" /> <span class="avail">Revit 2021 → 2027</span>
 
@@ -16,11 +17,19 @@ Create **rules** that sort elements into worksets: by category, family name, typ
 Only elements **already in a user workset** are processed. Elements in Revit's own worksets (views, families, standards) are never touched, nor those **borrowed by another user**. Collaboration must be enabled (**Worksets** button).
 </Aside>
 
+<Win name="rules" alt="Sort into worksets window" />
+
 ## Rules
 
-Each table row is a rule: a name, **conditions** and a **target workset**. Rules are read **from top to bottom**: an element matching several rules is sorted by the **first** one. Use **Move up / Move down** to change the order, the **On** box to set a rule aside.
+Each table row is a rule: a name, **conditions** and a **target workset**. Rules **run one after the other, from top to bottom**. An element matching several rules ends up in the workset of the **last** one: put general rules at the top and special cases below. Use **Move up / Move down** to change the order, the **On** box to set a rule aside.
 
 An element that no rule matches is not moved.
+
+A **⚠** in the **Elements** column (after **Preview…**) means some of the rule's elements are taken over by a rule placed lower.
+
+**Example**: rule 1 sorts all walls into “ARC_Walls”; rule 2 (category = Walls **AND** type contains “50”) takes them over and moves them into “GC”.
+
+<Win name="rules-table" alt="Rules table" />
 
 ## Conditions
 
@@ -36,15 +45,23 @@ A rule holds conditions joined by **AND** (all true) or **OR** (at least one). A
 
 Operators: equals, is not, contains, does not contain, starts with, ends with, regular expression, is empty, is not empty. Case is ignored.
 
+<Win name="rules-editor" alt="Editing a rule" narrow />
+
 ## Target workset
 
 Pick a workset of the project or **type a new name**: it will be created when applying.
+
+To create a rule, click **+ Add a rule**: it stays a **draft** until you click **Add to list** (it is neither applied nor counted before).
+
+<Win name="rules-new-editor" alt="New rule, not in the list yet" narrow />
 
 ## Scope, preview, apply
 
 - **Scope**: whole project, active view or selection.
 - **Preview…**: shows how many elements will move to each workset, without changing anything.
 - **Apply** / **Apply and close**: moves the elements in a single operation, undoable with **Ctrl+Z**.
+
+<Win name="rules-preview" alt="Sorting preview" />
 
 ## Configurations
 

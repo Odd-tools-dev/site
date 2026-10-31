@@ -7,10 +7,13 @@ sidebar:
 
 import { Steps, Aside } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 
 <Icon name="worksets" size="big" /> <span class="avail">Revit 2021 → 2027</span>
 
 One window to manage **user worksets**: create, rename, delete, set "Visible in all views" and save **configurations** to reuse from one project to another.
+
+<Win name="worksets" alt="Worksets window" />
 
 ## Collaboration
 
@@ -22,6 +25,8 @@ Worksets only exist when **collaboration** is enabled. If it is not, the button 
 <Aside type="caution">
 Enabling collaboration is not easy to undo. **Save the file** afterwards to keep this setting.
 </Aside>
+
+<Win name="worksets-enable" alt="Enabling collaboration" narrow />
 
 ## The table
 
@@ -37,6 +42,8 @@ One row per user workset. **Double-click** a name to edit it.
 
 Changes are **colored** before being applied: accent for new / modified, green for applied, red strikethrough for to delete. An empty or duplicated name turns red.
 
+<Win name="worksets-table" alt="Worksets table" />
+
 ## Add, delete
 
 - **Add**: type a name then **Add** (or Enter).
@@ -46,6 +53,8 @@ Changes are **colored** before being applied: accent for new / modified, green f
 A workset **borrowed by another user** cannot be renamed or deleted. Deleting a workset is only possible from **Revit 2022** (Revit API limit).
 </Aside>
 
+<Win name="worksets-delete" alt="Deleting a workset" narrow />
+
 ## Apply
 
 Nothing changes in Revit until you click a button:
@@ -53,6 +62,8 @@ Nothing changes in Revit until you click a button:
 - **Apply**: applies and keeps the window open.
 - **Apply and close**.
 - **Close**: asks for confirmation if some changes are not applied.
+
+<Win name="worksets-cfg" alt="Configuration bar" />
 
 ## Configurations
 
