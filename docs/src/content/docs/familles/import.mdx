@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="import" size="big" /> <span class="avail">Revit 2021 → 2027</span>
@@ -14,6 +15,8 @@ import Ribbon from '~/components/Ribbon.astro';
 Charge dans le projet les familles (`.rfa`) d'un dossier et de ses sous-dossiers.
 
 ## Utiliser l'outil
+
+<Win name="import" alt="Fenêtre Import massif" />
 
 <Steps>
 1. Ouvrez un **projet** (pas une famille), puis cliquez sur **Import Massif**.
@@ -25,11 +28,15 @@ Charge dans le projet les familles (`.rfa`) d'un dossier et de ses sous-dossiers
 
 ## Ce que montre la liste
 
+<Win name="import-list" alt="Liste des familles à importer" />
+
 Pour chaque fichier : le **nom complet avec l'extension**, son **état** par rapport au projet, son **poids** et la **version de Revit** dans laquelle il a été enregistré.
 
 Une famille enregistrée dans une **version de Revit plus récente** que la vôtre est **grisée** et ne peut pas être cochée : Revit ne peut pas la charger. La version s'affiche en rouge.
 
 ## Si la famille existe déjà dans le projet
+
+<Win name="import-options" alt="Choix si la famille existe déjà" narrow />
 
 - **Ignorer** : la famille du projet reste telle quelle.
 - **Remplacer la version existante** : la famille est rechargée, les valeurs de paramètres du projet sont conservées.

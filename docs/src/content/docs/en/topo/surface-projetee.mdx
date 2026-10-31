@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="projectedarea" size="big" /> <span class="avail">Revit 2025 → 2027</span>
@@ -18,6 +19,8 @@ Computes the **ground-projected area** of Toposolids and their subdivisions and 
 Create an **instance parameter of type Area**, bound to the **Toposolid** category. Its name is up to you; you will type it in the window.
 
 ## Use the tool
+
+<Win name="topo" alt="Projected Topo Area window" narrow />
 
 <Steps>
 1. Click **Projected Topo Area** (Toposolid panel).

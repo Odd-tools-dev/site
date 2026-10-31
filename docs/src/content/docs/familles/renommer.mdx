@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="rename" size="big" /> <span class="avail">Revit 2021 → 2027</span>
@@ -15,12 +16,16 @@ Une fenêtre liste toutes les familles, leurs types et leurs catégories. On ren
 
 ## Le tableau
 
+<Win name="rename" alt="Fenêtre Renommer" />
+
 Trois colonnes : **Catégorie** (non modifiable), **Famille** et **Type**. **Double-cliquez** sur un nom pour le modifier.
 
 - Les noms de **familles système** ne sont pas modifiables, mais leurs types le sont.
 - Les cellules modifiées sont **surlignées** avant l'application.
 - Passez la souris sur une cellule pour voir le nom d'origine.
 - En cas de problème, la cellule passe en rouge : nom vide, caractère interdit (`` \ : { } [ ] | ; < > ? ` ~ ``) ou nom déjà utilisé.
+
+<Win name="rename-table" alt="Cellules modifiées, appliquées et en erreur" />
 
 ## Filtrer ce qui est affiché
 
@@ -30,13 +35,21 @@ Les filtres se trouvent à droite.
 - **Type de catégorie** : Modèle, Annotation, Sur place (in situ), à cocher dans un menu déroulant.
 - **Catégories** : menu déroulant avec cases à cocher. La première ligne « Toutes les catégories » coche ou décoche tout.
 
+<Win name="rename-filters" alt="Filtres" narrow />
+
 ## Renommer en lot
 
 Choisissez d'abord la **cible** : les **familles**, les **types**, ou les deux.
 
+<Win name="rename-target" alt="Cible du renommage" narrow />
+
 **Préfixe / Suffixe** : saisissez le texte à ajouter au début ou à la fin des noms.
 
+<Win name="rename-affix" alt="Préfixe et suffixe" narrow />
+
 **Rechercher / Remplacer** : saisissez le texte à trouver et son remplacement. Options : **Respecter la casse** et **Expression régulière**.
+
+<Win name="rename-replace" alt="Rechercher et remplacer" narrow />
 
 Chaque section a deux boutons :
 

@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="projectedarea" size="big" /> <span class="avail">Revit 2025 → 2027</span>
@@ -18,6 +19,8 @@ Calcule la **surface projetée au sol** des Toposolids et de leurs sous-division
 Créez un **paramètre d'instance de type Surface**, lié à la catégorie **Toposolid**. Son nom est libre ; vous le saisirez dans la fenêtre.
 
 ## Utiliser l'outil
+
+<Win name="topo" alt="Fenêtre Surface Topo Projetée" narrow />
 
 <Steps>
 1. Cliquez sur **Surface Topo Projetée** (panneau Toposolid).

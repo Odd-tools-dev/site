@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="import" size="big" /> <span class="avail">Revit 2021 → 2027</span>
@@ -14,6 +15,8 @@ import Ribbon from '~/components/Ribbon.astro';
 Loads the families (`.rfa`) of a folder and its subfolders into the project.
 
 ## Use the tool
+
+<Win name="import" alt="Bulk Import window" />
 
 <Steps>
 1. Open a **project** (not a family), then click **Bulk Import**.
@@ -25,11 +28,15 @@ Loads the families (`.rfa`) of a folder and its subfolders into the project.
 
 ## What the list shows
 
+<Win name="import-list" alt="List of families to import" />
+
 For each file: the **full name with extension**, its **status** relative to the project, its **size** and the **Revit version** it was saved in.
 
 A family saved in a **newer Revit version** than yours is **greyed out** and cannot be ticked: Revit cannot load it. The version is shown in red.
 
 ## If the family already exists in the project
+
+<Win name="import-options" alt="Choice if the family already exists" narrow />
 
 - **Skip**: the project's family is left as is.
 - **Replace the existing version**: the family is reloaded, the project's parameter values are kept.

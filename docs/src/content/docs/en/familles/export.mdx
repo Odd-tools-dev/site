@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="export" size="big" /> <span class="avail">Revit 2021 → 2027</span>
@@ -14,6 +15,8 @@ import Ribbon from '~/components/Ribbon.astro';
 Saves all of a project's loadable families (`.rfa`), or only the ones you pick, to a folder in one go.
 
 ## Use the tool
+
+<Win name="export" alt="Bulk Export window" />
 
 <Steps>
 1. Open the project, then click **Bulk Export** (Family management panel).
@@ -24,6 +27,8 @@ Saves all of a project's loadable families (`.rfa`), or only the ones you pick, 
 </Steps>
 
 ## Options
+
+<Win name="export-options" alt="Export options" />
 
 - **Create a subfolder per category**: sorts files by category. Without subfolders, the category name is added to the file name when there is a duplicate.
 - **Add the Revit version to the file name**: an example of the resulting name is shown under the option.

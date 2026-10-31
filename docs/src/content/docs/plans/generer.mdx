@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="plans" size="big" /> <span class="avail">Revit 2025 → 2027</span>
@@ -21,6 +22,8 @@ On peut générer les trois, ou seulement une partie.
 
 ## Configurations
 
+<Win name="plans-vues" alt="Fenêtre Plans de ventes" />
+
 En haut de la fenêtre, une **configuration** regroupe tous les réglages. Vous pouvez en enregistrer plusieurs sous des noms différents (par exemple une par type de projet), les sélectionner, les dupliquer (**+ Nouvelle**) ou les supprimer. Un repère « ● modifiée » signale que les réglages affichés diffèrent de la configuration enregistrée. À la fermeture ou à la génération, Odd Tools propose d'écraser la configuration, de l'enregistrer sous un autre nom ou de continuer sans enregistrer.
 
 ## Réglage des vues
@@ -31,21 +34,35 @@ En haut de la fenêtre, une **configuration** regroupe tous les réglages. Vous 
 
 **Niveaux concernés** : cochez les niveaux à traiter.
 
+<Win name="plans-vues-dwellings" alt="Logements" narrow />
+
+<Win name="plans-vues-levels" alt="Niveaux" narrow />
+
 **Porte d'entrée (repère d'orientation)** : la vue est tournée d'après la porte d'entrée. Choisissez la catégorie de la porte, puis comment la reconnaître :
 - par le **nom de la famille** ;
 - par la **famille et son type** ;
 - par la **famille et la valeur d'une propriété** (condition : égale à, contient, ou expression régulière).
 
+<Win name="plans-vues-door" alt="Porte d'entrée" narrow />
+
 **Nom des vues** : préfixe, texte (propriété du logement), suffixe, et affichage du niveau dans le nom (toujours, jamais, ou seulement si le logement s'étend sur plusieurs niveaux). Un exemple du nom obtenu s'affiche dessous.
 
 **Type de vue** : le type de « Plan d'étage » à utiliser.
 
+<Win name="plans-vues-viewname" alt="Nom et type des vues" narrow />
+
 ## Réglage des nomenclatures
+
+<Win name="plans-suite-sched" alt="Nom des nomenclatures" narrow />
+
+<Win name="plans-suite-schedsource" alt="Nomenclature de référence" narrow />
 
 - **Nom des nomenclatures** : même principe que pour les vues.
 - **Nomenclature de référence** : elle est **dupliquée pour chaque logement**, avec ses champs et son gabarit. Son filtre sur la propriété du N° de logement est corrigé s'il existe, ajouté sinon.
 
 ## Réglage des feuilles
+
+<Win name="plans-suite" alt="Nomenclatures et feuilles" />
 
 - **Nom des feuilles** et **cartouche** à utiliser.
 - **Placement sur les feuilles** : placer les vues et/ou les nomenclatures.

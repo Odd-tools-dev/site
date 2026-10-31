@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="options" size="big" />
@@ -15,9 +16,13 @@ Le bouton **Options** (panneau Général) règle deux choses.
 
 ## Panneaux affichés dans le ruban
 
+<Win name="options-panels" alt="Panneaux affichés" narrow />
+
 Cochez les panneaux à afficher. Le panneau Général (À propos, Options) reste toujours visible. Le changement s'applique immédiatement.
 
 ## Apparence des fenêtres
+
+<Win name="options-theme" alt="Apparence des fenêtres" narrow />
 
 Choisissez **Clair**, **Sombre** ou **Défini par Revit** pour les fenêtres des outils. Le choix s'applique à la prochaine ouverture d'une fenêtre.
 

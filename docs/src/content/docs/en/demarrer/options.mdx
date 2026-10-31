@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="options" size="big" />
@@ -15,9 +16,13 @@ The **Options** button (General panel) sets two things.
 
 ## Panels shown in the ribbon
 
+<Win name="options-panels" alt="Panels shown" narrow />
+
 Tick the panels to show. The General panel (About, Options) is always visible. The change applies immediately.
 
 ## Window appearance
+
+<Win name="options-theme" alt="Window appearance" narrow />
 
 Choose **Light**, **Dark** or **Set by Revit** for the tools' windows. The choice applies the next time a window opens.
 

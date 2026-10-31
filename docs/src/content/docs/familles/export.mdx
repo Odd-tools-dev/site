@@ -7,6 +7,7 @@ sidebar:
 
 import { Steps, Aside, Badge } from '@astrojs/starlight/components';
 import Icon from '~/components/Icon.astro';
+import Win from '~/components/Win.astro';
 import Ribbon from '~/components/Ribbon.astro';
 
 <Icon name="export" size="big" /> <span class="avail">Revit 2021 → 2027</span>
@@ -14,6 +15,8 @@ import Ribbon from '~/components/Ribbon.astro';
 Enregistre en une fois toutes les familles chargeables (`.rfa`) d'un projet, ou seulement celles que vous choisissez, dans un dossier.
 
 ## Utiliser l'outil
+
+<Win name="export" alt="Fenêtre Export massif" />
 
 <Steps>
 1. Ouvrez le projet, puis cliquez sur **Export Massif** (panneau Gestion des familles).
@@ -24,6 +27,8 @@ Enregistre en une fois toutes les familles chargeables (`.rfa`) d'un projet, ou 
 </Steps>
 
 ## Options
+
+<Win name="export-options" alt="Options d'export" />
 
 - **Créer un sous-dossier par catégorie** : range les fichiers par catégorie. Sans sous-dossier, le nom de la catégorie est ajouté au nom du fichier en cas de doublon.
 - **Ajouter la version de Revit au nom du fichier** : un exemple du nom obtenu s'affiche sous l'option.

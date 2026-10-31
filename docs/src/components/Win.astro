@@ -1,0 +1,9 @@
+---
+const { name, alt = '', narrow = false } = Astro.props;
+const lang = Astro.currentLocale === 'en' ? 'en' : 'fr';
+const b = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<figure class={`winpic ${narrow ? 'narrow' : ''}`}>
+  <img class="l" src={`${b}/img/win/${lang}/${name}-clair.png`} alt={alt} loading="lazy" />
+  <img class="d" src={`${b}/img/win/${lang}/${name}-sombre.png`} alt={alt} loading="lazy" />
+</figure>
