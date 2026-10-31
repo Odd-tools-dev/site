@@ -16,16 +16,17 @@
   </picture>
 </p>
 
-Odd Tools ajoute un onglet à Revit (2021 à 2027) pour les tâches répétitives des projets BIM. Plans de ventes et Topographie : à partir de Revit 2025.
+Odd Tools ajoute un onglet à Revit (2021 à 2027) pour les tâches répétitives des projets BIM. Plans de ventes et Topographie : à partir de Revit 2025 ; Gestion des familles et Sous-projets : dès Revit 2021.
 
 | Outil | Ce qu'il fait |
 |---|---|
 | **Plans de ventes** | Crée, pour chaque logement, une vue de plan orientée selon la porte d'entrée, une nomenclature et une feuille. |
 | **Gestion des familles** | Export et import massifs de familles, avec gestion des doublons, et renommage en lot des familles et de leurs types. |
+| **Sous-projets** | Gère les sous-projets (worksets), active le travail collaboratif, et range automatiquement les éléments grâce à des règles ordonnées, avec aperçu avant d'appliquer. |
 | **Surface Topo Projetée** | Calcule la surface projetée au sol des Toposolids et l'écrit dans un paramètre. |
 
 Les fenêtres suivent le thème de Revit, ou un thème clair ou sombre au choix, et existent en français et en anglais.
 
-**Version 0.14 Beta.** Les installateurs ne sont pas encore publics.
+**Version 0.20 Beta.** Les installateurs ne sont pas encore publics.
 
 Contact : [odd.tools.dev@gmail.com](mailto:odd.tools.dev@gmail.com)
