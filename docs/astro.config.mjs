@@ -18,9 +18,10 @@ export default defineConfig({
         en: { label: 'English', lang: 'en' },
       },
       customCss: ['./src/styles/odd.css'],
-      components: { Footer: './src/components/Footer.astro' },
+      components: { Footer: './src/components/Footer.astro', SocialIcons: './src/components/SocialIcons.astro' },
       sidebar: [
         { slug: 'index', label: 'Accueil', translations: { en: 'Home' } },
+        { label: '← Retour au site', translations: { en: '← Back to the site' }, link: 'https://odd-tools-dev.github.io/site/' },
         { label: 'Démarrer', translations: { en: 'Getting started' }, items: [
           { slug: 'demarrer/installation' },
           { slug: 'demarrer/ruban' },
