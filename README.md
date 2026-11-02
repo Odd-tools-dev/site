@@ -27,6 +27,6 @@ Odd Tools ajoute un onglet à Revit (2021 à 2027) pour les tâches répétitive
 
 Les fenêtres suivent le thème de Revit, ou un thème clair ou sombre au choix, et existent en français et en anglais.
 
-**Version 0.20 Beta.** Les installateurs ne sont pas encore publics.
+**Version 0.21 Beta**, ouverte sur candidature : [formulaire de candidature](https://forms.gle/Sv3sxqqc5UeZWTxT6).
 
 Contact : [odd.tools.dev@gmail.com](mailto:odd.tools.dev@gmail.com)
